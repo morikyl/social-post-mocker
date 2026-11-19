@@ -1,0 +1,2206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Social post mocker</title>
+<!-- html-to-image 1.11.11 (MIT, github.com/bubkoo/html-to-image), embedded so export works offline and in sandboxed browsers -->
+<script>!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e((t="undefined"!=typeof globalThis?globalThis:t||self).htmlToImage={})}(this,(function(t){"use strict";function e(t,e,n,r){return new(n||(n=Promise))((function(i,o){function u(t){try{a(r.next(t))}catch(t){o(t)}}function c(t){try{a(r.throw(t))}catch(t){o(t)}}function a(t){var e;t.done?i(t.value):(e=t.value,e instanceof n?e:new n((function(t){t(e)}))).then(u,c)}a((r=r.apply(t,e||[])).next())}))}function n(t,e){var n,r,i,o,u={label:0,sent:function(){if(1&i[0])throw i[1];return i[1]},trys:[],ops:[]};return o={next:c(0),throw:c(1),return:c(2)},"function"==typeof Symbol&&(o[Symbol.iterator]=function(){return this}),o;function c(c){return function(a){return function(c){if(n)throw new TypeError("Generator is already executing.");for(;o&&(o=0,c[0]&&(u=0)),u;)try{if(n=1,r&&(i=2&c[0]?r.return:c[0]?r.throw||((i=r.return)&&i.call(r),0):r.next)&&!(i=i.call(r,c[1])).done)return i;switch(r=0,i&&(c=[2&c[0],i.value]),c[0]){case 0:case 1:i=c;break;case 4:return u.label++,{value:c[1],done:!1};case 5:u.label++,r=c[1],c=[0];continue;case 7:c=u.ops.pop(),u.trys.pop();continue;default:if(!(i=u.trys,(i=i.length>0&&i[i.length-1])||6!==c[0]&&2!==c[0])){u=0;continue}if(3===c[0]&&(!i||c[1]>i[0]&&c[1]<i[3])){u.label=c[1];break}if(6===c[0]&&u.label<i[1]){u.label=i[1],i=c;break}if(i&&u.label<i[2]){u.label=i[2],u.ops.push(c);break}i[2]&&u.ops.pop(),u.trys.pop();continue}c=e.call(t,u)}catch(t){c=[6,t],r=0}finally{n=i=0}if(5&c[0])throw c[1];return{value:c[0]?c[1]:void 0,done:!0}}([c,a])}}}var r,i=(r=0,function(){return r+=1,"u".concat("0000".concat((Math.random()*Math.pow(36,4)<<0).toString(36)).slice(-4)).concat(r)});function o(t){for(var e=[],n=0,r=t.length;n<r;n++)e.push(t[n]);return e}function u(t,e){var n=(t.ownerDocument.defaultView||window).getComputedStyle(t).getPropertyValue(e);return n?parseFloat(n.replace("px","")):0}function c(t,e){void 0===e&&(e={});var n,r,i,o=e.width||(r=u(n=t,"border-left-width"),i=u(n,"border-right-width"),n.clientWidth+r+i),c=e.height||function(t){var e=u(t,"border-top-width"),n=u(t,"border-bottom-width");return t.clientHeight+e+n}(t);return{width:o,height:c}}var a=16384;function s(t,e){return void 0===e&&(e={}),t.toBlob?new Promise((function(n){t.toBlob(n,e.type?e.type:"image/png",e.quality?e.quality:1)})):new Promise((function(n){for(var r=window.atob(t.toDataURL(e.type?e.type:void 0,e.quality?e.quality:void 0).split(",")[1]),i=r.length,o=new Uint8Array(i),u=0;u<i;u+=1)o[u]=r.charCodeAt(u);n(new Blob([o],{type:e.type?e.type:"image/png"}))}))}function l(t){return new Promise((function(e,n){var r=new Image;r.decode=function(){return e(r)},r.onload=function(){return e(r)},r.onerror=n,r.crossOrigin="anonymous",r.decoding="async",r.src=t}))}function f(t){return e(this,void 0,void 0,(function(){return n(this,(function(e){return[2,Promise.resolve().then((function(){return(new XMLSerializer).serializeToString(t)})).then(encodeURIComponent).then((function(t){return"data:image/svg+xml;charset=utf-8,".concat(t)}))]}))}))}function h(t,r,i){return e(this,void 0,void 0,(function(){var e,o,u;return n(this,(function(n){return e="http://www.w3.org/2000/svg",o=document.createElementNS(e,"svg"),u=document.createElementNS(e,"foreignObject"),o.setAttribute("width","".concat(r)),o.setAttribute("height","".concat(i)),o.setAttribute("viewBox","0 0 ".concat(r," ").concat(i)),u.setAttribute("width","100%"),u.setAttribute("height","100%"),u.setAttribute("x","0"),u.setAttribute("y","0"),u.setAttribute("externalResourcesRequired","true"),o.appendChild(u),u.appendChild(t),[2,f(o)]}))}))}var d=function(t,e){if(t instanceof e)return!0;var n=Object.getPrototypeOf(t);return null!==n&&(n.constructor.name===e.name||d(n,e))};function v(t,e,n){var r=".".concat(t,":").concat(e),i=n.cssText?function(t){var e=t.getPropertyValue("content");return"".concat(t.cssText," content: '").concat(e.replace(/'|"/g,""),"';")}(n):function(t){return o(t).map((function(e){var n=t.getPropertyValue(e),r=t.getPropertyPriority(e);return"".concat(e,": ").concat(n).concat(r?" !important":"",";")})).join(" ")}(n);return document.createTextNode("".concat(r,"{").concat(i,"}"))}function p(t,e,n){var r=window.getComputedStyle(t,n),o=r.getPropertyValue("content");if(""!==o&&"none"!==o){var u=i();try{e.className="".concat(e.className," ").concat(u)}catch(t){return}var c=document.createElement("style");c.appendChild(v(u,n,r)),e.appendChild(c)}}var g="application/font-woff",m="image/jpeg",w={woff:g,woff2:g,ttf:"application/font-truetype",eot:"application/vnd.ms-fontobject",png:"image/png",jpg:m,jpeg:m,gif:"image/gif",tiff:"image/tiff",svg:"image/svg+xml",webp:"image/webp"};function b(t){var e=function(t){var e=/\.([^./]*?)$/g.exec(t);return e?e[1]:""}(t).toLowerCase();return w[e]||""}function y(t){return-1!==t.search(/^(data:)/)}function x(t,e){return"data:".concat(e,";base64,").concat(t)}function S(t,r,i){return e(this,void 0,void 0,(function(){var e,o;return n(this,(function(n){switch(n.label){case 0:return[4,fetch(t,r)];case 1:if(404===(e=n.sent()).status)throw new Error('Resource "'.concat(e.url,'" not found'));return[4,e.blob()];case 2:return o=n.sent(),[2,new Promise((function(t,n){var r=new FileReader;r.onerror=n,r.onloadend=function(){try{t(i({res:e,result:r.result}))}catch(t){n(t)}},r.readAsDataURL(o)}))]}}))}))}var E={};function C(t,r,i){return e(this,void 0,void 0,(function(){var e,o,u,c,a;return n(this,(function(n){switch(n.label){case 0:if(e=function(t,e,n){var r=t.replace(/\?.*/,"");return n&&(r=t),/ttf|otf|eot|woff2?/i.test(r)&&(r=r.replace(/.*\//,"")),e?"[".concat(e,"]").concat(r):r}(t,r,i.includeQueryParams),null!=E[e])return[2,E[e]];i.cacheBust&&(t+=(/\?/.test(t)?"&":"?")+(new Date).getTime()),n.label=1;case 1:return n.trys.push([1,3,,4]),[4,S(t,i.fetchRequestInit,(function(t){var e=t.res,n=t.result;return r||(r=e.headers.get("Content-Type")||""),function(t){return t.split(/,/)[1]}(n)}))];case 2:return u=n.sent(),o=x(u,r),[3,4];case 3:return c=n.sent(),o=i.imagePlaceholder||"",a="Failed to fetch resource: ".concat(t),c&&(a="string"==typeof c?c:c.message),a&&console.warn(a),[3,4];case 4:return E[e]=o,[2,o]}}))}))}function P(t){return e(this,void 0,void 0,(function(){var e;return n(this,(function(n){return"data:,"===(e=t.toDataURL())?[2,t.cloneNode(!1)]:[2,l(e)]}))}))}function R(t,r){return e(this,void 0,void 0,(function(){var e,i,o,u;return n(this,(function(n){switch(n.label){case 0:return t.currentSrc?(e=document.createElement("canvas"),i=e.getContext("2d"),e.width=t.clientWidth,e.height=t.clientHeight,null==i||i.drawImage(t,0,0,e.width,e.height),[2,l(e.toDataURL())]):(o=t.poster,u=b(o),[4,C(o,u,r)]);case 1:return[2,l(n.sent())]}}))}))}function T(t){var r;return e(this,void 0,void 0,(function(){return n(this,(function(e){switch(e.label){case 0:return e.trys.push([0,3,,4]),(null===(r=null==t?void 0:t.contentDocument)||void 0===r?void 0:r.body)?[4,L(t.contentDocument.body,{},!0)]:[3,2];case 1:return[2,e.sent()];case 2:return[3,4];case 3:return e.sent(),[3,4];case 4:return[2,t.cloneNode(!1)]}}))}))}function A(t,e){return d(e,Element)&&(function(t,e){var n=e.style;if(n){var r=window.getComputedStyle(t);r.cssText?(n.cssText=r.cssText,n.transformOrigin=r.transformOrigin):o(r).forEach((function(i){var o=r.getPropertyValue(i);if("font-size"===i&&o.endsWith("px")){var u=Math.floor(parseFloat(o.substring(0,o.length-2)))-.1;o="".concat(u,"px")}d(t,HTMLIFrameElement)&&"display"===i&&"inline"===o&&(o="block"),"d"===i&&e.getAttribute("d")&&(o="path(".concat(e.getAttribute("d"),")")),n.setProperty(i,o,r.getPropertyPriority(i))}))}}(t,e),function(t,e){p(t,e,":before"),p(t,e,":after")}(t,e),function(t,e){d(t,HTMLTextAreaElement)&&(e.innerHTML=t.value),d(t,HTMLInputElement)&&e.setAttribute("value",t.value)}(t,e),function(t,e){if(d(t,HTMLSelectElement)){var n=e,r=Array.from(n.children).find((function(e){return t.value===e.getAttribute("value")}));r&&r.setAttribute("selected","")}}(t,e)),e}function L(t,r,i){return e(this,void 0,void 0,(function(){return n(this,(function(u){return i||!r.filter||r.filter(t)?[2,Promise.resolve(t).then((function(t){return function(t,r){return e(this,void 0,void 0,(function(){return n(this,(function(e){return d(t,HTMLCanvasElement)?[2,P(t)]:d(t,HTMLVideoElement)?[2,R(t,r)]:d(t,HTMLIFrameElement)?[2,T(t)]:[2,t.cloneNode(!1)]}))}))}(t,r)})).then((function(i){return function(t,r,i){var u,c;return e(this,void 0,void 0,(function(){var e;return n(this,(function(n){switch(n.label){case 0:return e=[],0===(e=null!=(a=t).tagName&&"SLOT"===a.tagName.toUpperCase()&&t.assignedNodes?o(t.assignedNodes()):d(t,HTMLIFrameElement)&&(null===(u=t.contentDocument)||void 0===u?void 0:u.body)?o(t.contentDocument.body.childNodes):o((null!==(c=t.shadowRoot)&&void 0!==c?c:t).childNodes)).length||d(t,HTMLVideoElement)?[2,r]:[4,e.reduce((function(t,e){return t.then((function(){return L(e,i)})).then((function(t){t&&r.appendChild(t)}))}),Promise.resolve())];case 1:return n.sent(),[2,r]}var a}))}))}(t,i,r)})).then((function(e){return A(t,e)})).then((function(t){return function(t,r){return e(this,void 0,void 0,(function(){var e,i,o,u,c,a,s,l,f,h,d,v,p;return n(this,(function(n){switch(n.label){case 0:if(0===(e=t.querySelectorAll?t.querySelectorAll("use"):[]).length)return[2,t];i={},p=0,n.label=1;case 1:return p<e.length?(o=e[p],(u=o.getAttribute("xlink:href"))?(c=t.querySelector(u),a=document.querySelector(u),c||!a||i[u]?[3,3]:(s=i,l=u,[4,L(a,r,!0)])):[3,3]):[3,4];case 2:s[l]=n.sent(),n.label=3;case 3:return p++,[3,1];case 4:if((f=Object.values(i)).length){for(h="http://www.w3.org/1999/xhtml",(d=document.createElementNS(h,"svg")).setAttribute("xmlns",h),d.style.position="absolute",d.style.width="0",d.style.height="0",d.style.overflow="hidden",d.style.display="none",v=document.createElementNS(h,"defs"),d.appendChild(v),p=0;p<f.length;p++)v.appendChild(f[p]);t.appendChild(d)}return[2,t]}}))}))}(t,r)}))]:[2,null]}))}))}var N=/url\((['"]?)([^'"]+?)\1\)/g,k=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,I=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function D(t,r,i,o,u){return e(this,void 0,void 0,(function(){var e,c,a,s;return n(this,(function(n){switch(n.label){case 0:return n.trys.push([0,5,,6]),e=i?function(t,e){if(t.match(/^[a-z]+:\/\//i))return t;if(t.match(/^\/\//))return window.location.protocol+t;if(t.match(/^[a-z]+:/i))return t;var n=document.implementation.createHTMLDocument(),r=n.createElement("base"),i=n.createElement("a");return n.head.appendChild(r),n.body.appendChild(i),e&&(r.href=e),i.href=t,i.href}(r,i):r,c=b(r),a=void 0,u?[4,u(e)]:[3,2];case 1:return s=n.sent(),a=x(s,c),[3,4];case 2:return[4,C(e,c,o)];case 3:a=n.sent(),n.label=4;case 4:return[2,t.replace((l=r,f=l.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1"),new RegExp("(url\\(['\"]?)(".concat(f,")(['\"]?\\))"),"g")),"$1".concat(a,"$3"))];case 5:return n.sent(),[3,6];case 6:return[2,t]}var l,f}))}))}function M(t){return-1!==t.search(N)}function H(t,r,i){return e(this,void 0,void 0,(function(){var e,o;return n(this,(function(n){return M(t)?(e=function(t,e){var n=e.preferredFontFormat;return n?t.replace(I,(function(t){for(;;){var e=k.exec(t)||[],r=e[0],i=e[2];if(!i)return"";if(i===n)return"src: ".concat(r,";")}})):t}(t,i),o=function(t){var e=[];return t.replace(N,(function(t,n,r){return e.push(r),t})),e.filter((function(t){return!y(t)}))}(e),[2,o.reduce((function(t,e){return t.then((function(t){return D(t,e,r,i)}))}),Promise.resolve(e))]):[2,t]}))}))}function V(t,r,i){var o;return e(this,void 0,void 0,(function(){var e,u;return n(this,(function(n){switch(n.label){case 0:return(e=null===(o=r.style)||void 0===o?void 0:o.getPropertyValue(t))?[4,H(e,null,i)]:[3,2];case 1:return u=n.sent(),r.style.setProperty(t,u,r.style.getPropertyPriority(t)),[2,!0];case 2:return[2,!1]}}))}))}function F(t,r){return e(this,void 0,void 0,(function(){return n(this,(function(e){switch(e.label){case 0:return[4,V("background",t,r)];case 1:return e.sent()?[3,3]:[4,V("background-image",t,r)];case 2:e.sent(),e.label=3;case 3:return[4,V("mask",t,r)];case 4:return e.sent()?[3,6]:[4,V("mask-image",t,r)];case 5:e.sent(),e.label=6;case 6:return[2]}}))}))}function j(t,r){return e(this,void 0,void 0,(function(){var e,i,o;return n(this,(function(n){switch(n.label){case 0:return(e=d(t,HTMLImageElement))&&!y(t.src)||d(t,SVGImageElement)&&!y(t.href.baseVal)?[4,C(i=e?t.src:t.href.baseVal,b(i),r)]:[2];case 1:return o=n.sent(),[4,new Promise((function(n,r){t.onload=n,t.onerror=r;var i=t;i.decode&&(i.decode=n),"lazy"===i.loading&&(i.loading="eager"),e?(t.srcset="",t.src=o):t.href.baseVal=o}))];case 2:return n.sent(),[2]}}))}))}function q(t,r){return e(this,void 0,void 0,(function(){var e,i;return n(this,(function(n){switch(n.label){case 0:return e=o(t.childNodes),i=e.map((function(t){return U(t,r)})),[4,Promise.all(i).then((function(){return t}))];case 1:return n.sent(),[2]}}))}))}function U(t,r){return e(this,void 0,void 0,(function(){return n(this,(function(e){switch(e.label){case 0:return d(t,Element)?[4,F(t,r)]:[3,4];case 1:return e.sent(),[4,j(t,r)];case 2:return e.sent(),[4,q(t,r)];case 3:e.sent(),e.label=4;case 4:return[2]}}))}))}var O={};function B(t){return e(this,void 0,void 0,(function(){var e,r;return n(this,(function(n){switch(n.label){case 0:return null!=(e=O[t])?[2,e]:[4,fetch(t)];case 1:return[4,n.sent().text()];case 2:return r=n.sent(),e={url:t,cssText:r},O[t]=e,[2,e]}}))}))}function z(t,r){return e(this,void 0,void 0,(function(){var i,o,u,c,a=this;return n(this,(function(s){return i=t.cssText,o=/url\(["']?([^"')]+)["']?\)/g,u=i.match(/url\([^)]+\)/g)||[],c=u.map((function(u){return e(a,void 0,void 0,(function(){var e;return n(this,(function(n){return(e=u.replace(o,"$1")).startsWith("https://")||(e=new URL(e,t.url).href),[2,S(e,r.fetchRequestInit,(function(t){var e=t.result;return i=i.replace(u,"url(".concat(e,")")),[u,e]}))]}))}))})),[2,Promise.all(c).then((function(){return i}))]}))}))}function W(t){if(null==t)return[];for(var e=[],n=t.replace(/(\/\*[\s\S]*?\*\/)/gi,""),r=new RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){if(null===(u=r.exec(n)))break;e.push(u[0])}n=n.replace(r,"");for(var i=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi,o=new RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){var u;if(null===(u=i.exec(n))){if(null===(u=o.exec(n)))break;i.lastIndex=o.lastIndex}else o.lastIndex=i.lastIndex;e.push(u[0])}return e}function $(t,r){return e(this,void 0,void 0,(function(){var e,i;return n(this,(function(n){return e=[],i=[],t.forEach((function(e){if("cssRules"in e)try{o(e.cssRules||[]).forEach((function(t,n){if(t.type===CSSRule.IMPORT_RULE){var o=n+1,u=B(t.href).then((function(t){return z(t,r)})).then((function(t){return W(t).forEach((function(t){try{e.insertRule(t,t.startsWith("@import")?o+=1:e.cssRules.length)}catch(e){console.error("Error inserting rule from remote css",{rule:t,error:e})}}))})).catch((function(t){console.error("Error loading remote css",t.toString())}));i.push(u)}}))}catch(o){var n=t.find((function(t){return null==t.href}))||document.styleSheets[0];null!=e.href&&i.push(B(e.href).then((function(t){return z(t,r)})).then((function(t){return W(t).forEach((function(t){n.insertRule(t,e.cssRules.length)}))})).catch((function(t){console.error("Error loading remote stylesheet",t)}))),console.error("Error inlining remote css file",o)}})),[2,Promise.all(i).then((function(){return t.forEach((function(t){if("cssRules"in t)try{o(t.cssRules||[]).forEach((function(t){e.push(t)}))}catch(e){console.error("Error while reading CSS rules from ".concat(t.href),e)}})),e}))]}))}))}function _(t){return t.filter((function(t){return t.type===CSSRule.FONT_FACE_RULE})).filter((function(t){return M(t.style.getPropertyValue("src"))}))}function G(t,r){return e(this,void 0,void 0,(function(){return n(this,(function(e){switch(e.label){case 0:if(null==t.ownerDocument)throw new Error("Provided element is not within a Document");return[4,$(o(t.ownerDocument.styleSheets),r)];case 1:return[2,_(e.sent())]}}))}))}function J(t,r){return e(this,void 0,void 0,(function(){var e;return n(this,(function(n){switch(n.label){case 0:return[4,G(t,r)];case 1:return e=n.sent(),[4,Promise.all(e.map((function(t){var e=t.parentStyleSheet?t.parentStyleSheet.href:null;return H(t.cssText,e,r)})))];case 2:return[2,n.sent().join("\n")]}}))}))}function Q(t,r){return e(this,void 0,void 0,(function(){var e,i,o,u,c;return n(this,(function(n){switch(n.label){case 0:return null==r.fontEmbedCSS?[3,1]:(i=r.fontEmbedCSS,[3,5]);case 1:return r.skipFonts?(o=null,[3,4]):[3,2];case 2:return[4,J(t,r)];case 3:o=n.sent(),n.label=4;case 4:i=o,n.label=5;case 5:return(e=i)&&(u=document.createElement("style"),c=document.createTextNode(e),u.appendChild(c),t.firstChild?t.insertBefore(u,t.firstChild):t.appendChild(u)),[2]}}))}))}function X(t,r){return void 0===r&&(r={}),e(this,void 0,void 0,(function(){var e,i,o,u;return n(this,(function(n){switch(n.label){case 0:return e=c(t,r),i=e.width,o=e.height,[4,L(t,r,!0)];case 1:return[4,Q(u=n.sent(),r)];case 2:return n.sent(),[4,U(u,r)];case 3:return n.sent(),function(t,e){var n=t.style;e.backgroundColor&&(n.backgroundColor=e.backgroundColor),e.width&&(n.width="".concat(e.width,"px")),e.height&&(n.height="".concat(e.height,"px"));var r=e.style;null!=r&&Object.keys(r).forEach((function(t){n[t]=r[t]}))}(u,r),[4,h(u,i,o)];case 4:return[2,n.sent()]}}))}))}function K(t,r){return void 0===r&&(r={}),e(this,void 0,void 0,(function(){var e,i,o,u,s,f,h,d,v;return n(this,(function(n){switch(n.label){case 0:return e=c(t,r),i=e.width,o=e.height,[4,X(t,r)];case 1:return[4,l(n.sent())];case 2:return u=n.sent(),s=document.createElement("canvas"),f=s.getContext("2d"),h=r.pixelRatio||function(){var t,e;try{e=process}catch(t){}var n=e&&e.env?e.env.devicePixelRatio:null;return n&&(t=parseInt(n,10),Number.isNaN(t)&&(t=1)),t||window.devicePixelRatio||1}(),d=r.canvasWidth||i,v=r.canvasHeight||o,s.width=d*h,s.height=v*h,r.skipAutoScale||function(t){(t.width>a||t.height>a)&&(t.width>a&&t.height>a?t.width>t.height?(t.height*=a/t.width,t.width=a):(t.width*=a/t.height,t.height=a):t.width>a?(t.height*=a/t.width,t.width=a):(t.width*=a/t.height,t.height=a))}(s),s.style.width="".concat(d),s.style.height="".concat(v),r.backgroundColor&&(f.fillStyle=r.backgroundColor,f.fillRect(0,0,s.width,s.height)),f.drawImage(u,0,0,s.width,s.height),[2,s]}}))}))}t.getFontEmbedCSS=function(t,r){return void 0===r&&(r={}),e(this,void 0,void 0,(function(){return n(this,(function(e){return[2,J(t,r)]}))}))},t.toBlob=function(t,r){return void 0===r&&(r={}),e(this,void 0,void 0,(function(){return n(this,(function(e){switch(e.label){case 0:return[4,K(t,r)];case 1:return[4,s(e.sent())];case 2:return[2,e.sent()]}}))}))},t.toCanvas=K,t.toJpeg=function(t,r){return void 0===r&&(r={}),e(this,void 0,void 0,(function(){return n(this,(function(e){switch(e.label){case 0:return[4,K(t,r)];case 1:return[2,e.sent().toDataURL("image/jpeg",r.quality||1)]}}))}))},t.toPixelData=function(t,r){return void 0===r&&(r={}),e(this,void 0,void 0,(function(){var e,i,o,u;return n(this,(function(n){switch(n.label){case 0:return e=c(t,r),i=e.width,o=e.height,[4,K(t,r)];case 1:return u=n.sent(),[2,u.getContext("2d").getImageData(0,0,i,o).data]}}))}))},t.toPng=function(t,r){return void 0===r&&(r={}),e(this,void 0,void 0,(function(){return n(this,(function(e){switch(e.label){case 0:return[4,K(t,r)];case 1:return[2,e.sent().toDataURL()]}}))}))},t.toSvg=X}));</script>
+<style>
+  :root{
+    --ui-bg:#f4f5f7; --ui-panel:#fff; --ui-border:#e3e6ea; --ui-text:#1b1f24; --ui-muted:#6b7480; --ui-accent:#1d9bf0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--ui-bg);color:var(--ui-text)}
+  .app{display:grid;grid-template-columns:var(--sidebar-w,420px) 1fr;height:100vh;position:relative}
+  .app.no-sidebar{grid-template-columns:1fr}
+  .resizer{position:absolute;top:0;bottom:0;left:calc(var(--sidebar-w,420px) - 4px);width:8px;cursor:col-resize;z-index:5}
+  .resizer::after{content:'';position:absolute;top:0;bottom:0;left:3px;width:2px;background:transparent;transition:background .15s}
+  .resizer:hover::after,.resizer.active::after{background:var(--ui-accent)}
+  .app.no-sidebar .resizer{display:none}
+  body.resizing{cursor:col-resize;user-select:none}
+  .app.no-sidebar #editor{display:none}
+  .sb-toggle{display:flex;align-items:center;gap:6px;padding:7px 9px}
+  .sb-toggle svg{width:16px;height:16px}
+  /* ---------- Editor ---------- */
+  #editor{overflow-y:auto;padding:16px;border-right:1px solid var(--ui-border);background:var(--ui-bg)}
+  .card{background:var(--ui-panel);border:1px solid var(--ui-border);border-radius:12px;padding:14px;margin-bottom:12px}
+  .card h3{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--ui-muted)}
+  .lbl{display:block;font-size:12px;font-weight:600;color:var(--ui-muted);margin:10px 0 4px}
+  input[type=text],input:not([type]),input[type=url],input[type=datetime-local],select,textarea{
+    width:100%;font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--ui-border);border-radius:8px;background:#fff;color:inherit;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:var(--ui-accent);box-shadow:0 0 0 3px rgba(29,155,240,.15)}
+  textarea{resize:vertical;min-height:90px;line-height:1.4}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .row5{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .row5 input{padding:6px 7px;font-size:13px}
+  .row2 .lbl,.row5 .lbl{margin-top:8px}
+  .at{display:flex;align-items:center;border:1px solid var(--ui-border);border-radius:8px;background:#fff;padding-left:10px}
+  .at span{color:var(--ui-muted)} .at input{border:0;box-shadow:none!important;padding-left:2px}
+  .flex{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .grow{flex:1;min-width:0}
+  .btn{font:inherit;font-size:13px;font-weight:600;padding:7px 11px;border-radius:8px;border:1px solid var(--ui-border);background:#fff;color:var(--ui-text);cursor:pointer;white-space:nowrap}
+  .btn:hover{background:#f0f2f5}
+  .btn.primary{background:var(--ui-text);color:#fff;border-color:var(--ui-text)}
+  .btn.primary:hover{background:#000}
+  .btn.add{width:100%;padding:11px;border-style:dashed;color:var(--ui-accent);background:transparent}
+  .btn.add:hover{background:rgba(29,155,240,.06)}
+  .ib{border:0;background:transparent;cursor:pointer;width:28px;height:28px;border-radius:6px;color:var(--ui-muted);font-size:14px}
+  .ib:hover:not(:disabled){background:#eef0f3;color:var(--ui-text)} .ib:disabled{opacity:.3;cursor:default}
+  .ib.danger:hover:not(:disabled){background:#fde8ea;color:#d4213d}
+  .seg{display:flex;background:#eef0f3;border-radius:9px;padding:3px;gap:2px}
+  .seg button{flex:1;font:inherit;font-size:13px;border:0;background:transparent;padding:6px 8px;border-radius:7px;cursor:pointer;color:var(--ui-muted)}
+  .seg button.on{background:#fff;color:var(--ui-text);font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  .chk{display:flex;align-items:center;gap:8px;font-size:13px;margin-top:10px;cursor:pointer}
+  .row-av{display:flex;gap:10px;align-items:flex-end}
+  .av-thumb.sq{border-radius:6px}
+  .av-thumb{width:44px;height:44px;border-radius:50%;flex:none;object-fit:cover;background:#ddd;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+  .tc-h{display:flex;align-items:center;gap:2px;margin-bottom:8px}
+  .tc-h b{font-size:14px} .sp{flex:1}
+  .counter{font-size:12px;color:var(--ui-muted);text-align:right;margin-top:4px}
+  .counter.over{color:#d4213d;font-weight:600}
+  .media-list{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+  .mthumb{position:relative;width:64px;height:64px;border-radius:8px;overflow:hidden;background:#000}
+  .mthumb img,.mthumb video{width:100%;height:100%;object-fit:cover;display:block}
+  .mthumb .x{position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;border:0;background:rgba(0,0,0,.7);color:#fff;cursor:pointer;font-size:12px;line-height:20px;padding:0}
+  .mrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ui-muted);margin-top:4px;min-height:28px}
+  .mrow .chk{margin:0;font-size:12px}
+  .mrow input.dur-in{width:74px;padding:4px 6px;font-size:12px}
+  .mthumb .tag{position:absolute;left:3px;bottom:3px;background:rgba(0,0,0,.7);color:#fff;font-size:10px;padding:0 4px;border-radius:3px}
+  .hint{font-size:11px;color:var(--ui-muted);margin-top:6px}
+  .tcard.drag{border-color:var(--ui-accent);background:#f2f9ff}
+  .sub{border-left:3px solid var(--ui-border);padding-left:10px;margin-top:6px}
+  .preset-bar{display:flex;gap:6px;align-items:center;margin-bottom:4px}
+  .preset-bar select{flex:1;min-width:0;padding:6px 8px;font-size:13px}
+  .btn.sm{padding:6px 9px;font-size:12px}
+  details.more{margin-top:12px;border-top:1px solid var(--ui-border);padding-top:10px}
+  details.more summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:6px;font-size:13px;font-weight:600;color:var(--ui-text);user-select:none}
+  details.more summary::-webkit-details-marker{display:none}
+  details.more summary::before{content:'';width:0;height:0;border-left:5px solid currentColor;border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .15s;align-self:center}
+  details.more[open] summary::before{transform:rotate(90deg)}
+  details.more summary:hover{color:var(--ui-accent)}
+  .more-hint{font-weight:400;color:var(--ui-muted);font-size:12px}
+  details.more[open] .more-hint{display:none}
+  .more-body{padding-top:2px}
+  .thread-h{display:flex;align-items:center;margin:18px 2px 8px}
+  .thread-h h3{margin:0;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--ui-muted)}
+  input[type=range]{width:100%}
+
+  /* ---------- Stage ---------- */
+  .stage{display:flex;flex-direction:column;min-width:0}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--ui-border);background:var(--ui-panel)}
+  .toolbar .sp{flex:1}
+  .toolbar .sep{width:1px;height:22px;background:var(--ui-border);margin:0 2px}
+  /* canvas switcher */
+  .cv-wrap{position:relative}
+  .cv-btn{display:flex;align-items:center;gap:7px;max-width:240px}
+  .cv-btn svg{width:15px;height:15px;flex:none;color:var(--ui-muted)}
+  #cv-name{overflow:hidden;text-overflow:ellipsis}
+  .cv-caret{color:var(--ui-muted);font-size:11px}
+  .cv-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:270px;max-height:70vh;overflow-y:auto;background:#fff;border:1px solid var(--ui-border);border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.14);padding:6px;z-index:20}
+  .cv-menu[hidden]{display:none}
+  .cv-head{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ui-muted);padding:6px 10px 4px}
+  .cv-item{display:flex;align-items:center;gap:8px;width:100%;border:0;background:none;font:inherit;font-size:13px;padding:7px 10px;border-radius:7px;cursor:pointer;text-align:left;color:var(--ui-text)}
+  .cv-item:hover{background:#f0f2f5}
+  .cv-item .n{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cv-item .c{color:var(--ui-muted);font-size:12px}
+  .cv-item.cur{font-weight:600}
+  .cv-item.danger{color:#d4213d}
+  .cv-check{width:14px;flex:none;color:var(--ui-accent)}
+  .cv-sep{height:1px;background:var(--ui-border);margin:6px 4px}
+  /* infinite canvas */
+  .canvas{flex:1;position:relative;overflow:hidden;user-select:none;touch-action:none;
+    background-color:#eceef1;background-image:radial-gradient(#d5d9df 1px,transparent 1px);background-size:16px 16px}
+  .canvas.panning,.canvas.panning *{cursor:grabbing!important}
+  .canvas.space{cursor:grab}
+  .marquee{position:absolute;border:1px solid var(--ui-accent);background:rgba(29,155,240,.08);pointer-events:none;z-index:4}
+  .marquee[hidden]{display:none}
+  .multi-note{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#e8f4fd;border:1px solid #b9dcf7;color:#0b5c99;border-radius:10px;padding:8px 10px;margin-bottom:12px;font-size:13px}
+  .multi-note .grow{min-width:0}
+  .multi-note .btn{padding:4px 9px;font-size:12px}
+  .obj-bar{display:flex;align-items:center;gap:6px;margin:0 0 10px}
+  .obj-bar b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+  .obj-bar .btn.danger{color:#d4213d}
+  .obj-bar .btn.danger:hover{border-color:#d4213d;background:#fde8ea}
+  #world{position:absolute;left:0;top:0;transform-origin:0 0}
+  .board{position:absolute;cursor:pointer}
+  .board.sel{cursor:default;outline:2px solid var(--ui-accent);outline-offset:6px}
+  .board:not(.sel):hover{outline:1px solid rgba(29,155,240,.55);outline-offset:6px}
+  .board-label{position:absolute;left:0;bottom:100%;margin-bottom:10px;max-width:100%;font-size:13px;font-weight:600;color:var(--ui-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .board.sel .board-label{color:var(--ui-accent)}
+  .zoom-ui{position:absolute;right:14px;bottom:14px;display:flex;gap:2px;background:#fff;border:1px solid var(--ui-border);border-radius:10px;padding:3px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+  .zoom-ui button{font:inherit;font-size:13px;border:0;background:transparent;border-radius:7px;padding:5px 9px;cursor:pointer;color:var(--ui-text);min-width:32px}
+  .zoom-ui button:hover{background:#eef0f3}
+  .canvas-hint{position:absolute;left:14px;bottom:14px;font-size:12px;color:var(--ui-muted);background:rgba(255,255,255,.85);padding:5px 9px;border-radius:8px;pointer-events:none}
+  .capture{display:inline-block}
+  .capture.framed{padding:40px;background:linear-gradient(135deg,#7f5cff 0%,#1d9bf0 55%,#2fd3c3 100%)}
+  .capture.framed .tw-root{border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.25);overflow:hidden}
+  .tcard.flash,.blk.flash{animation:flash 1.2s ease}
+  /* email editor */
+  textarea.sm{min-height:0}
+  .row4c{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  input[type=color]{width:100%;height:34px;padding:2px;border:1px solid var(--ui-border);border-radius:8px;background:#fff;cursor:pointer}
+  img.thumb{width:44px;height:34px;object-fit:cover;border-radius:6px;border:1px solid var(--ui-border)}
+  .hint code{font-size:11px;background:#eef0f3;border-radius:4px;padding:0 4px}
+  details.blk{padding:0}
+  details.blk summary{list-style:none;display:flex;align-items:center;gap:6px;padding:9px 8px 9px 12px;cursor:pointer;user-select:none}
+  details.blk summary::-webkit-details-marker{display:none}
+  details.blk summary::before{content:'';flex:none;width:0;height:0;border-left:5px solid var(--ui-muted);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .15s}
+  details.blk[open] summary::before{transform:rotate(90deg)}
+  .blk-type{font-size:13px;font-weight:700;flex:none}
+  .blk-snip{font-size:12px;color:var(--ui-muted);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .blk-body{padding:0 14px 14px;border-top:1px solid var(--ui-border)}
+  .add-blk{margin-top:4px}
+
+  /* ---------- Slack rendering ---------- */
+  .sl-root{--s-bg:#1a1d21;--s-text:#d1d2d3;--s-strong:#f8f8f8;--s-muted:#ababad;--s-men:#1d9bd1;--s-men-bg:rgba(29,155,209,.1);
+    --s-self:#f2c744;--s-self-bg:rgba(242,199,68,.15);--s-react:rgba(255,255,255,.07);
+    background:var(--s-bg);color:var(--s-text);font:15px/1.46668 Lato,"Slack-Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:14px 20px 16px;-webkit-font-smoothing:antialiased;box-sizing:border-box}
+  .sl-root.light{--s-bg:#fff;--s-text:#1d1c1d;--s-strong:#1d1c1d;--s-muted:#616061;--s-men:#1264a3;--s-men-bg:rgba(29,155,209,.1);
+    --s-self:#1d1c1d;--s-self-bg:rgba(242,199,68,.4);--s-react:rgba(29,28,29,.06)}
+  .sl-msg{display:flex;gap:8px}
+  .sl-av{width:36px;height:36px;border-radius:6px;object-fit:cover;flex:none;display:block;margin-top:4px}
+  .sl-av.init{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px}
+  .sl-main{flex:1;min-width:0}
+  .sl-head{display:flex;align-items:baseline;gap:8px}
+  .sl-name{color:var(--s-strong);font-weight:900}
+  .sl-time{color:var(--s-muted);font-size:12px}
+  .sl-body{overflow-wrap:anywhere}
+  .sl-body b{color:var(--s-strong);font-weight:700}
+  .sl-line{min-height:22px}
+  .sl-gap{height:8px}
+  .sl-ul{margin:0;padding-left:26px;list-style:disc}
+  .sl-ul.d1{list-style:circle}
+  .sl-ul.d2{list-style:square}
+  .sl-ul li{padding-left:2px}
+  .sl-men{color:var(--s-men);background:var(--s-men-bg);border-radius:3px;padding:0 2px}
+  .sl-men.self{color:var(--s-self);background:var(--s-self-bg)}
+  .sl-code{font:12px/1.5 Monaco,Menlo,Consolas,monospace;color:#e8912d;background:rgba(232,232,232,.04);border:1px solid rgba(232,232,232,.13);border-radius:3px;padding:1px 3px}
+  .sl-edited{color:var(--s-muted);font-size:13px}
+  .sl-reacts{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
+  .sl-react{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 8px;border-radius:12px;background:var(--s-react);font-size:12px}
+  .sl-react b{font-weight:600}
+  textarea.sl-src{font:13px/1.5 ui-monospace,Menlo,Consolas,monospace}
+
+  /* ---------- Email rendering ---------- */
+  .em-root{--c-bg:#fff;--c-text:#1f1f1f;--c-muted:#5f6368;--c-line:#e8eaed;--c-read:#f2f6fc;
+    background:var(--c-bg);color:var(--c-text);width:760px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .em-root.mobile{width:390px}
+  .em-root.dark{--c-bg:#1f1f1f;--c-text:#e3e3e3;--c-muted:#9aa0a6;--c-line:#3c4043;--c-read:#2a2b2e}
+  .em-client{padding:22px 24px 18px}
+  .mobile .em-client{padding:18px 16px 14px}
+  .em-subj{font-size:22px;line-height:28px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .mobile .em-subj{font-size:20px;line-height:26px}
+  .em-chip{font-size:12px;line-height:18px;background:var(--c-line);color:var(--c-muted);border-radius:4px;padding:0 6px}
+  .em-from{display:flex;align-items:flex-start;gap:12px;margin-top:16px}
+  .em-av{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;display:block}
+  .em-av.init{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:17px}
+  .em-who{flex:1;min-width:0;font-size:14px;line-height:20px}
+  .em-who b{font-weight:600}
+  .em-addr,.em-to,.em-time{color:var(--c-muted);font-size:12px}
+  .em-time{white-space:nowrap}
+  .em-body{background:var(--e-bg);padding:32px 24px;font-family:var(--e-font);color:var(--e-text)}
+  .mobile .em-body{padding:0}
+  .em-card{max-width:600px;margin:0 auto;background:var(--e-card);border-radius:var(--e-radius);padding:36px 40px;
+    --e-muted:color-mix(in srgb,var(--e-text) 60%,var(--e-card));--e-line:color-mix(in srgb,var(--e-text) 14%,var(--e-card))}
+  .mobile .em-card{border-radius:0;padding:24px 20px}
+  .eb{margin-bottom:20px}
+  .eb:last-child{margin-bottom:0}
+  .eb h1,.eb h2,.eb h3,.eb h4,.eb p,.eb ul,.eb ol{margin:0}
+  .eb-h1{font-size:30px;line-height:38px;font-weight:700;letter-spacing:-.01em}
+  .eb-h2{font-size:23px;line-height:30px;font-weight:700}
+  .eb-h3{font-size:18px;line-height:26px;font-weight:700}
+  .mobile .eb-h1{font-size:26px;line-height:33px}
+  .em-text,.em-list{font-size:16px;line-height:1.6}
+  .em-text a,.eb-foot a{color:var(--e-accent);text-decoration:underline}
+  .em-list{padding-left:22px}
+  .em-list li{margin:4px 0}
+  .em-btn{display:inline-block;background:var(--e-accent);color:#fff;font-weight:600;font-size:15px;line-height:20px;padding:12px 24px;border-radius:var(--e-radius)}
+  .em-btn.full{display:block;text-align:center}
+  .eb-logo{display:inline-block;height:auto;border-radius:calc(var(--e-radius) * .6)}
+  .eb-logotext{font-size:18px;font-weight:700}
+  .eb-img,.eb-cimg{display:block;width:100%;height:auto;border-radius:calc(var(--e-radius) * .8)}
+  .eb-cimg{margin-bottom:10px}
+  .eb-ph,.eb-blocked{display:flex;align-items:center;justify-content:center;text-align:center;aspect-ratio:16/9;padding:12px;font-size:13px;color:var(--e-muted);
+    background:color-mix(in srgb,var(--e-text) 6%,var(--e-card));border:1px dashed color-mix(in srgb,var(--e-text) 25%,var(--e-card))}
+  .eb-blocked{border-style:solid}
+  .eb-logo-blocked{display:inline-flex;aspect-ratio:auto;padding:6px 10px;border-radius:6px}
+  .eb-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .mobile .eb-cols{grid-template-columns:1fr}
+  .eb-col h4{font-size:17px;line-height:24px;margin-bottom:4px}
+  .eb-col .em-text{font-size:15px}
+  .eb-box{background:color-mix(in srgb,var(--e-accent) 10%,var(--e-card));border-radius:var(--e-radius);padding:16px 18px}
+  .eb-box .bx-t{display:block;margin-bottom:4px;font-size:16px;font-weight:700}
+  .eb-hr{border:0;height:1px;background:var(--e-line);margin:4px 0}
+  .eb-foot{font-size:12px;line-height:18px;color:var(--e-muted);text-align:center}
+  .eb-foot-links{margin-top:6px}
+  .liq-miss{background:#fde68a;color:#92400e;border-radius:3px;padding:0 3px;font-family:ui-monospace,Menlo,monospace;font-size:.85em}
+  /* inbox list */
+  .em-inbox{padding-bottom:4px}
+  .ib-h{padding:14px 20px 10px;font-size:15px;font-weight:600;border-bottom:1px solid var(--c-line)}
+  .ib-row{display:flex;align-items:center;gap:14px;height:44px;padding:0 20px;font-size:14px;border-bottom:1px solid var(--c-line);background:var(--c-read)}
+  .ib-row.unread{background:var(--c-bg)}
+  .mobile .ib-h{border-bottom:0;font-size:13px;color:var(--c-muted);padding:14px 16px 6px}
+  .mobile .ib-row{height:auto;align-items:flex-start;gap:12px;padding:12px 16px;border-bottom:0;background:var(--c-bg)}
+  .ib-ico{display:flex;gap:10px;color:var(--c-muted);flex:none}
+  .ib-ico svg{width:18px;height:18px}
+  .ib-from{width:170px;flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ib-mid{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ib-pre{color:var(--c-muted);font-weight:400}
+  .ib-time{flex:none;font-size:12px}
+  .ib-m{flex:1;min-width:0}
+  .ib-l1{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .mobile .ib-from{width:auto;font-size:15px}
+  .mobile .ib-subj{font-weight:700;font-size:14px;line-height:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mobile .ib-pre{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px;line-height:20px}
+  .skb{height:9px;border-radius:5px;background:var(--c-line);margin:5px 0}
+  .ib-row.sk{opacity:.75}
+  .sk-av{background:var(--c-line)}
+  @keyframes flash{0%,40%{border-color:var(--ui-accent);box-shadow:0 0 0 3px rgba(29,155,240,.25)}100%{box-shadow:none}}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px);background:#1b1f24;color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:.2s;pointer-events:none;z-index:9}
+  .modal{position:fixed;inset:0;background:rgba(15,20,25,.45);display:flex;align-items:center;justify-content:center;z-index:10;padding:24px}
+  .modal[hidden]{display:none}
+  .modal-box{background:#fff;border-radius:14px;padding:18px;max-width:min(680px,100%);max-height:100%;display:flex;flex-direction:column;gap:10px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+  .modal-box p{margin:0;font-size:13px;color:var(--ui-muted)}
+  .modal-box img{max-width:100%;min-height:0;flex:1;object-fit:contain;border:1px solid var(--ui-border);border-radius:8px}
+  .toast.show{opacity:1;transform:translateX(-50%)}
+
+  /* ---------- Tweet rendering ---------- */
+  .tw-root{
+    --bg:#fff;--text:#0f1419;--muted:#536471;--border:#eff3f4;--link:#1d9bf0;--line:#cfd9de;--mborder:#cfd9de;
+    background:var(--bg);color:var(--text);
+    font-family:"TwitterChirp",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .tw-root[data-theme=dim]{--bg:#15202b;--text:#f7f9f9;--muted:#8b98a5;--border:#38444d;--line:#425364;--mborder:#38444d}
+  .tw-root[data-theme=dark]{--bg:#000;--text:#e7e9ea;--muted:#71767b;--border:#2f3336;--line:#333639;--mborder:#2f3336}
+  .tw{position:relative;display:flex;gap:8px;padding:12px 16px}
+  .tw-mhdr{display:flex;align-items:center;gap:28px;height:53px;padding:0 16px;font-size:17px;border-bottom:1px solid var(--border)}
+  .tw-mhdr svg{width:20px;height:20px}
+  .av-col{flex:none;width:40px;position:relative}
+  .av{width:40px;height:40px;border-radius:50%;object-fit:cover;display:block;background:#ccd6dd}
+  .av.sq{border-radius:4px}
+  .av.init{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:17px}
+  .tline{position:absolute;left:19px;width:2px;top:44px;bottom:-20px;background:var(--line)}
+  .tline.above{top:-12px;bottom:auto;height:8px}
+  .body{flex:1;min-width:0}
+  .hdr{display:flex;align-items:center;gap:4px;font-size:15px;line-height:20px;min-width:0}
+  .name{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .muted{color:var(--muted)}
+  .hdr .handle{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex-shrink:1}
+  .hdr .when{white-space:nowrap;flex:none}
+  .badge{width:18px;height:18px;flex:none}
+  .tools{margin-left:auto;color:var(--muted);flex:none;display:flex;align-items:center;gap:14px;padding-left:8px}
+  .tools svg{width:18.75px;height:18.75px}
+  .tools .grok{color:var(--text);opacity:.75}
+  .text{font-size:15px;line-height:20px;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:2px}
+  .text:empty{display:none}
+  .text a{color:var(--link);text-decoration:none}
+  .show-more{color:var(--link);font-size:15px;line-height:20px;margin-top:2px}
+  .media{margin-top:12px;border:1px solid var(--mborder);border-radius:16px;overflow:hidden;display:grid;gap:2px;background:var(--border)}
+  .media.m1{display:block}
+  .media.m1 img{width:100%;max-height:510px;object-fit:cover;display:block}
+  .media.m1 video{width:100%;max-height:510px;display:block;background:#000}
+  .media.m2{grid-template-columns:1fr 1fr;aspect-ratio:16/9}
+  .media.m3,.media.m4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;aspect-ratio:16/9}
+  .media.m3 .mi:first-child{grid-row:1/3}
+  .mi{position:relative;overflow:hidden;min-height:0;background:#000}
+  .media:not(.m1) img,.media:not(.m1) video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .dur{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.77);color:#fff;font-size:13px;line-height:16px;padding:2px 6px;border-radius:4px;z-index:2;font-weight:500}
+  .mute{position:absolute;right:12px;bottom:12px;width:32px;height:32px;border-radius:50%;border:0;padding:0;background:rgba(15,20,25,.75);color:#fff;display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer}
+  .mute svg{width:18px;height:18px}
+  .dur:empty{display:none}
+  .vid video{cursor:pointer}
+  /* link preview cards */
+  .lcard{margin-top:12px;border:1px solid var(--mborder);border-radius:16px;overflow:hidden;position:relative;background:var(--border)}
+  .lcard.large{aspect-ratio:1.91/1}
+  .lcard.large img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .lc-title{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px);background:rgba(0,0,0,.77);color:#fff;font-size:13px;line-height:16px;padding:2px 6px;border-radius:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .lc-from{color:var(--muted);font-size:13px;line-height:16px;margin-top:4px}
+  .lcard.small{display:flex;align-items:stretch;background:var(--bg)}
+  .lc-icon{flex:none;width:130px;min-height:130px;display:flex;align-items:center;justify-content:center;background:var(--border);color:var(--muted);border-right:1px solid var(--mborder)}
+  .lc-icon svg{width:30px;height:30px}
+  .lc-text{padding:12px;display:flex;flex-direction:column;justify-content:center;gap:2px;font-size:15px;line-height:20px;min-width:0}
+  .lc-text .muted{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .acts{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--muted);font-size:13px}
+  .act{display:flex;align-items:center;gap:4px;min-width:0}
+  .act svg{width:18.75px;height:18.75px;flex:none}
+  .act.liked{color:#f91880} .act.liked svg{fill:#f91880}
+  .act.rt{color:#00ba7c}
+  .act.bm svg{fill:var(--link)} .act.bm{color:var(--link)}
+  .acts .right{display:flex;gap:12px}
+  /* detail */
+  .detail{display:block;padding:12px 16px 0;position:relative}
+  .detail:not(.solo){border-bottom:1px solid var(--border)}
+  .detail .d-av{position:relative;flex:none}
+  .d-hdr{display:flex;gap:8px;align-items:center}
+  .d-hdr .who{min-width:0;flex:1}
+  .d-hdr .namerow{display:flex;align-items:center;gap:4px;font-size:15px;line-height:20px}
+  .d-hdr .handle{font-size:15px;line-height:20px}
+  .detail .text{font-size:17px;line-height:24px;margin-top:12px}
+  .d-meta{margin:16px 0;font-size:15px;line-height:20px;color:var(--muted)}
+  .d-meta b{color:var(--text)}
+  .detail .acts{border-top:1px solid var(--border);padding:4px 4px;height:52px;margin:0}
+  .detail .acts svg{width:22.5px;height:22.5px}
+  .detail .acts .act span{font-size:14px}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside id="editor"></aside>
+  <div class="resizer" id="sb-resizer" title="Drag to resize the editor · double-click to reset"></div>
+  <main class="stage">
+    <div class="toolbar">
+      <button class="btn sb-toggle" id="btn-sidebar" title="Hide editor (⌘\ / Ctrl+\)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+        <span id="sb-label">Hide editor</span></button>
+      <span class="sep"></span>
+      <div class="cv-wrap">
+        <button class="btn cv-btn" id="cv-btn" title="Switch, create, rename or delete canvases">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          <span id="cv-name">Canvas</span><span class="cv-caret">▾</span></button>
+        <div class="cv-menu" id="cv-menu" hidden></div>
+      </div>
+      <span class="sep"></span>
+      <button class="btn" id="btn-new-tweet" title="Add a tweet mock to the canvas">＋ Tweet</button>
+      <button class="btn" id="btn-new-email" title="Add an email mock to the canvas">＋ Email</button>
+      <button class="btn" id="btn-new-slack" title="Add a Slack message mock to the canvas">＋ Slack</button>
+      <span class="sp"></span>
+      <button class="btn" id="btn-share" title="Upload this canvas as a secret GitHub gist and copy a link anyone can open">Share link</button>
+      <button class="btn" id="btn-save" title="Download an editable .html copy with this canvas built in">Save as HTML</button>
+      <button class="btn primary" id="btn-dl" title="Download the selected mock as a PNG">Download PNG</button>
+    </div>
+    <div class="canvas" id="canvas">
+      <div id="world"></div>
+      <div class="marquee" id="marquee" hidden></div>
+      <div class="canvas-hint">Click to edit · drag the background to select (Shift adds) · ⌘C / ⌘V copy & paste · Space + drag or scroll to pan · pinch or ⌘ + scroll to zoom</div>
+      <div class="zoom-ui">
+        <button id="z-out" title="Zoom out">−</button>
+        <button id="z-pct" title="Reset to 100%">100%</button>
+        <button id="z-in" title="Zoom in">+</button>
+        <button id="z-fit" title="Fit all mocks">Fit</button>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal" id="ask-modal" hidden>
+  <form class="modal-box" id="ask-form" style="width:min(420px,100%)">
+    <b id="ask-title"></b>
+    <input id="ask-input" autocomplete="off">
+    <div class="flex" style="justify-content:flex-end">
+      <button type="button" class="btn" id="ask-cancel">Cancel</button>
+      <button type="submit" class="btn primary">OK</button>
+    </div>
+  </form>
+</div>
+<div class="modal" id="copy-modal" hidden>
+  <div class="modal-box">
+    <b>Copy image</b>
+    <p>This browser blocked direct clipboard access. Right-click the image and choose <b>Copy Image</b>, drag it into another app, or download it.</p>
+    <img id="copy-img" alt="Tweet mock">
+    <div class="flex" style="justify-content:flex-end">
+      <button class="btn" id="copy-dl">Download PNG</button>
+      <button class="btn primary" id="copy-close">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- Optional built-in mock. "Save" writes a copy of this page with the current mock embedded here. -->
+<script id="preset" type="application/json"></script>
+<!-- Mocks to add to the open canvas once (each import has an id; applied ids are remembered per file). -->
+<script id="imports" type="application/json">[]</script>
+<script>
+// Snapshot of this page before anything renders, used by "Save" to write a self-contained editable copy
+const PAGE_SRC = '<!doctype html>\n' + document.documentElement.outerHTML;
+const STORE = 'tweet-mocker-v2:' + location.pathname; // each saved HTML file keeps its own autosave
+const SAMPLE_AVATAR = 'data:image/png;base64,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';
+const $ = s => document.querySelector(s);
+const uid = () => Math.random().toString(36).slice(2, 9);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function nowLocal(minsAgo = 0) {
+  const d = new Date(Date.now() - minsAgo * 60000);
+  const p = n => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+const blankCard = () => ({ on: true, image: '', title: '', domain: '' });
+const blankAuthor = () => ({ name: '', handle: '', avatar: '', verified: 'none', shape: 'circle' });
+function newTweet(o = {}) {
+  return { id: uid(), text: '', media: [], card: blankCard(), time: nowLocal(), replies: '', reposts: '', likes: '', views: '', bookmarks: '',
+           liked: false, reposted: false, bookmarked: false, customAuthor: false, author: blankAuthor(), ...o };
+}
+function defaults() {
+  return {
+    theme: 'light', device: 'desktop', focus: 1, width: 598, showActions: true, frame: 'plain', grok: true, lineAbove: false,
+    author: { name: 'LM Studio', handle: 'lmstudio', avatar: SAMPLE_AVATAR, verified: 'gold', shape: 'square' },
+    tweets: [
+      newTweet({ text: "Meet LM Studio Bionic.\n\nThe Agent made for Open Models.\n\nhttps://lmstudio.ai/bionic", time: '2026-07-16T15:25', replies: '89', reposts: '339', likes: '2000', views: '282300', bookmarks: '993' }),
+      newTweet({ text: "Bionic is LM Studio's agent for work and code.\n\nCreate and edit docs, slides, and PDFs. Every change is automatically saved, so you can work with your agent freely.\n\nBionic also excels at coding tasks. Ask it to do anything you would expect from a coding agent.", time: '2026-07-16T15:26', replies: '3', reposts: '7', likes: '161', views: '13000' }),
+      newTweet({ text: "State-of-the-art local voice transcription.\n\nTalk to Bionic naturally, and your speech gets transcribed in real time.\n\nYour speech and audio data is processed locally, and never leaves your device.", time: '2026-07-16T15:27', replies: '2', reposts: '5', likes: '98', views: '9100' }),
+    ],
+  };
+}
+
+/* A file holds a canvas ("doc") of one or more mocks. Each mock is a full set of tweet settings
+   plus its canvas position. `state` always points at the selected mock, so the editor edits it. */
+const kindOf = m => m.kind || 'tweet'; // 'tweet' (no kind field, as in older files), 'email' or 'slack'
+const toMock = (m, i = 0) => ({ ...(m.kind === 'email' ? emailDefaults() : m.kind === 'slack' ? slackDefaults() : defaults()), ...m, id: m.id || uid(), x: m.x ?? i * 680, y: m.y ?? 0 });
+
+/* ---------------- Email mocks ----------------
+   Modeled on Customer.io Design Studio: an envelope (sender, subject, preview text), a stack of
+   content blocks, brand styles, {{placeholders}} filled from sample data, and preview toggles. */
+const BLOCK_TYPES = {
+  logo:      { name: 'Logo',       make: () => ({ align: 'left' }) },
+  heading:   { name: 'Heading',    make: () => ({ text: 'Your headline', level: 2, align: 'left' }) },
+  paragraph: { name: 'Paragraph',  make: () => ({ text: 'Write your message here.', align: 'left' }) },
+  button:    { name: 'Button',     make: () => ({ label: 'Call to action', url: 'https://', align: 'left', full: false }) },
+  image:     { name: 'Image',      make: () => ({ src: '', alt: '' }) },
+  columns:   { name: 'Two columns', make: () => ({ cols: [{ src: '', title: 'Feature one', text: 'A short description.' }, { src: '', title: 'Feature two', text: 'A short description.' }] }) },
+  list:      { name: 'List',       make: () => ({ items: 'First point\nSecond point\nThird point', ordered: false }) },
+  box:       { name: 'Callout box', make: () => ({ title: 'Heads up', text: 'Something worth highlighting.' }) },
+  divider:   { name: 'Divider',    make: () => ({}) },
+  spacer:    { name: 'Spacer',     make: () => ({ size: 24 }) },
+  footer:    { name: 'Footer',     make: () => ({ text: 'Company name · Street address · City', links: true }) },
+};
+const blk = (type, o = {}) => ({ id: uid(), type, ...BLOCK_TYPES[type].make(), ...o });
+function emailDefaults() {
+  return {
+    kind: 'email', view: 'open', device: 'desktop', scheme: 'light', blockImages: false, showClient: true,
+    sender: { name: 'LM Studio', email: 'hello@lmstudio.ai', avatar: SAMPLE_AVATAR },
+    to: 'me', subject: 'New in Bionic: Remote Agents', preheader: 'Run agents on your other machines, end-to-end encrypted.',
+    time: nowLocal(), sample: 'first_name: Alex',
+    brand: { accent: '#5b4ae6', text: '#18181b', bg: '#f4f4f5', card: '#ffffff', font: 'system', radius: 10, logo: SAMPLE_AVATAR, logoWidth: 44 },
+    blocks: [
+      blk('logo'),
+      blk('heading', { text: 'New in Bionic: Remote Agents', level: 1 }),
+      blk('paragraph', { text: 'Hi {{first_name}},\n\nYou can now run Bionic agents on your other machines and hand them work from the computer you\'re on.' }),
+      blk('image', { alt: 'Remote Agents in Bionic' }),
+      blk('list', { items: 'Manage and run agents on any device\nAgents can message each other, even across devices\nDevices addressable with @-mentions for dispatching tasks\nEverything is end-to-end encrypted and directly P2P when possible' }),
+      blk('button', { label: 'Download Bionic', url: 'https://lmstudio.ai/bionic' }),
+      blk('divider'),
+      blk('footer', { text: 'LM Studio · You\'re receiving this because you signed up for product updates.' }),
+    ],
+  };
+}
+const emailStarter = () => ({ subject: 'Subject line', preheader: 'Preview text shown in the inbox', time: nowLocal(),
+  blocks: [blk('logo'), blk('heading', { level: 1 }), blk('paragraph', { text: 'Hi {{first_name}},\n\nWrite your message here.' }), blk('button'), blk('divider'), blk('footer')] });
+
+const FONTS = {
+  system: { name: 'System sans', css: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' },
+  helvetica: { name: 'Helvetica', css: '"Helvetica Neue", Helvetica, Arial, sans-serif' },
+  georgia: { name: 'Georgia (serif)', css: 'Georgia, "Times New Roman", serif' },
+  mono: { name: 'Monospace', css: 'ui-monospace, Menlo, Consolas, monospace' },
+};
+function parseSample(s) { // "first_name: Alex" per line
+  const o = {};
+  String(s || '').split('\n').forEach(l => { const m = l.match(/^\s*([\w.]+)\s*[:=]\s*(.*)$/); if (m) o[m[1]] = m[2].trim(); });
+  return o;
+}
+const LIQUID_RE = /\{\{\s*(?:customer\.)?([\w.]+)\s*\}\}/g;
+const liquidPlain = (raw, data) => String(raw || '').replace(LIQUID_RE, (all, k) => k in data ? data[k] : all);
+function emText(raw, data) { // escape, fill {{placeholders}}, then **bold**, [links](url) and line breaks
+  return esc(raw)
+    .replace(LIQUID_RE, (all, k) => k in data ? esc(data[k]) : `<span class="liq-miss">${all}</span>`)
+    .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a>$1</a>')
+    .replace(/\n/g, '<br>');
+}
+function emailTime(str, short) {
+  const d = new Date(str); if (isNaN(d)) return '';
+  const t = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  if (d.toDateString() === new Date().toDateString()) return t;
+  return short ? d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+    : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ', ' + t;
+}
+function emImg(src, alt, m, cls) {
+  if (!src) return `<div class="${cls} eb-ph">Image — upload one in the editor</div>`;
+  if (m.blockImages) return `<div class="${cls} eb-blocked">${esc(alt || 'Image')}</div>`;
+  return `<img class="${cls}" src="${esc(src)}" alt="${esc(alt)}">`;
+}
+function blockHTML(bk, m, data) {
+  const al = bk.align === 'center' ? ' style="text-align:center"' : '';
+  switch (bk.type) {
+    case 'logo':
+      if (!m.brand.logo) return `<div class="eb-logotext"${al}>${esc(m.sender.name)}</div>`;
+      return `<div${al}>${m.blockImages ? `<span class="eb-blocked eb-logo-blocked">${esc(m.sender.name || 'Logo')}</span>`
+        : `<img class="eb-logo" src="${esc(m.brand.logo)}" style="width:${+m.brand.logoWidth || 44}px" alt="">`}</div>`;
+    case 'heading': { const l = Math.min(3, Math.max(1, +bk.level || 2)); return `<h${l} class="eb-h${l}"${al}>${emText(bk.text, data)}</h${l}>`; }
+    case 'paragraph': return `<p class="em-text"${al}>${emText(bk.text, data)}</p>`;
+    case 'button': return `<div${al}><span class="em-btn${bk.full ? ' full' : ''}">${emText(bk.label, data)}</span></div>`;
+    case 'image': return emImg(bk.src, bk.alt, m, 'eb-img');
+    case 'columns': return `<div class="eb-cols">${bk.cols.map(c => `<div class="eb-col">${c.src ? emImg(c.src, c.title, m, 'eb-cimg') : ''}
+      ${c.title ? `<h4>${emText(c.title, data)}</h4>` : ''}<p class="em-text">${emText(c.text, data)}</p></div>`).join('')}</div>`;
+    case 'list': { const tag = bk.ordered ? 'ol' : 'ul';
+      return `<${tag} class="em-list">${String(bk.items || '').split('\n').filter(s => s.trim()).map(it => `<li>${emText(it, data)}</li>`).join('')}</${tag}>`; }
+    case 'box': return `<div class="eb-box">${bk.title ? `<span class="bx-t">${emText(bk.title, data)}</span>` : ''}<div class="em-text">${emText(bk.text, data)}</div></div>`;
+    case 'divider': return '<hr class="eb-hr">';
+    case 'spacer': return `<div style="height:${+bk.size || 24}px"></div>`;
+    case 'footer': return `<div class="eb-foot">${emText(bk.text, data)}${bk.links ? '<div class="eb-foot-links"><a>Unsubscribe</a> · <a>View in browser</a></div>' : ''}</div>`;
+  }
+  return '';
+}
+// Inbox row icons (checkbox + star); built on use because the svg() helper is defined further down
+const ibIcons = () => svg('<rect x="4" y="4" width="16" height="16" rx="2"/>') + svg('<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/>');
+function emailHTML(m) {
+  const data = parseSample(m.sample), mob = m.device === 'mobile', dark = m.scheme === 'dark', s = m.sender;
+  const subj = liquidPlain(m.subject, data) || '(no subject)', pre = liquidPlain(m.preheader, data);
+  const av = avatarHTML({ name: s.name || s.email || '?', avatar: s.avatar, shape: 'circle' }, 'em-av');
+  const cls = `em-root ${mob ? 'mobile' : 'desktop'}${dark ? ' dark' : ''}`;
+  if (m.view === 'inbox') {
+    const name = esc(s.name || s.email), t = esc(emailTime(m.time, true));
+    const sk = (w1, w2) => mob
+      ? `<div class="ib-row sk"><div class="em-av sk-av"></div><div class="ib-m"><div class="skb" style="width:${w1}%"></div><div class="skb" style="width:${w2}%"></div><div class="skb" style="width:${w2 - 15}%"></div></div></div>`
+      : `<div class="ib-row sk"><span class="ib-ico">${ibIcons()}</span><div class="skb" style="width:150px;flex:none"></div><div class="skb" style="width:${w2 * 4}px"></div></div>`;
+    const row = mob
+      ? `<div class="ib-row unread">${av}<div class="ib-m"><div class="ib-l1"><b class="ib-from">${name}</b><b class="ib-time">${t}</b></div>
+          <div class="ib-subj">${esc(subj)}</div><div class="ib-pre">${esc(pre)}</div></div></div>`
+      : `<div class="ib-row unread"><span class="ib-ico">${ibIcons()}</span><b class="ib-from">${name}</b>
+          <div class="ib-mid"><b>${esc(subj)}</b>${pre ? `<span class="ib-pre"> – ${esc(pre)}</span>` : ''}</div><b class="ib-time">${t}</b></div>`;
+    return `<div class="${cls}"><div class="em-inbox"><div class="ib-h">${mob ? 'Primary' : 'Inbox'}</div>${sk(45, 60)}${row}${sk(35, 75)}${sk(50, 55)}</div></div>`;
+  }
+  const b = m.brand, pal = dark ? { bg: '#0f0f10', card: '#1c1c1e', text: '#ececee' } : { bg: b.bg, card: b.card, text: b.text };
+  const vars = `--e-bg:${pal.bg};--e-card:${pal.card};--e-text:${pal.text};--e-accent:${b.accent};--e-radius:${+b.radius || 0}px;--e-font:${(FONTS[b.font] || FONTS.system).css}`;
+  const header = m.showClient === false ? '' : `<div class="em-client">
+      <div class="em-subj">${esc(subj)} <span class="em-chip">Inbox</span></div>
+      <div class="em-from">${av}<div class="em-who"><div><b>${esc(s.name || s.email)}</b>${mob ? '' : ` <span class="em-addr">&lt;${esc(s.email)}&gt;</span>`}</div>
+        <div class="em-to">to ${esc(m.to || 'me')} ▾</div></div><div class="em-time">${esc(emailTime(m.time, mob))}</div></div></div>`;
+  return `<div class="${cls}">${header}<div class="em-body" style="${esc(vars)}"><div class="em-card">
+    ${m.blocks.map(bk => `<div class="eb" data-bid="${esc(bk.id)}">${blockHTML(bk, m, data)}</div>`).join('')}</div></div></div>`;
+}
+/* ---------------- Slack mocks ----------------
+   One Slack message. Its text is written the way you'd type in Slack: *bold*, _italic_, ~strike~, `code`,
+   :emoji: codes, and "- " list items (indent two spaces per level). A typed "•" stays plain text, which is
+   handy for group labels above a real list. "Copy for Slack" puts the message on the clipboard as rich
+   text, so bold, italics and nested bullets survive pasting into Slack's composer. */
+const SLACK_EMOJI = { rocket: '🚀', arrow_down: '⬇️', point_down: '👇', point_right: '👉', ship: '🚢', tada: '🎉', eyes: '👀',
+  fire: '🔥', heart: '❤️', white_check_mark: '✅', heavy_check_mark: '✔️', raised_hands: '🙌', pray: '🙏', sparkles: '✨',
+  warning: '⚠️', calendar: '📅', memo: '📝', bulb: '💡', muscle: '💪', '+1': '👍', thumbsup: '👍', star: '⭐', zap: '⚡',
+  boom: '💥', link: '🔗', wave: '👋', clap: '👏', hourglass: '⌛', pushpin: '📌', red_circle: '🔴', large_green_circle: '🟢' };
+function slackDefaults() {
+  return {
+    kind: 'slack', theme: 'dark', width: 640, author: { name: 'mori', avatar: '' }, time: nowLocal(), edited: false, reactions: '',
+    people: 'Alex Zisis, Miguel, Ryan the Rhino, mori, yagil, Adrien Grondin',
+    text: "Shipping *Feature* next *Tues (11/24)* :rocket: so we have today, Friday & Monday to finish it !!\n\nHere's a laundry list of todos so everyone's clear on what to work on :arrow_down:\n\n*In-app*\n• _UI polish_\n- Settings → Connectors page @Alex Zisis\n- Sign-in flow @Alex Zisis @Miguel\n  - Backend support @Ryan the Rhino\n\n*Marketing*\n- Tweet (shorten + mock) @mori\n- Blog post @yagil",
+  };
+}
+const slackEmoji = s => String(s ?? '').replace(/:([a-z0-9_+-]+):/g, (all, k) => SLACK_EMOJI[k] || all);
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+// Inline formatting. rich = the Slack-look preview (styled mentions); otherwise plain HTML for the clipboard.
+function slackInline(raw, m, rich) {
+  let s = esc(slackEmoji(raw));
+  const names = String(m.people || '').split(',').map(n => n.trim()).filter(Boolean).sort((a, b) => b.length - a.length);
+  const self = String(m.author?.name || '').toLowerCase(), held = [];
+  const menRe = new RegExp('@(' + [...names.map(n => escRe(esc(n))), String.raw`\w[\w-]*`].join('|') + ')', 'g');
+  s = s.replace(menRe, (all, n) => { // park mentions so the bold/italic rules can't reach inside them
+    held.push(rich ? `<span class="sl-men${n.toLowerCase() === self ? ' self' : ''}">@${n}</span>` : `@${n}`);
+    return `\u0000${held.length - 1}\u0000`;
+  });
+  s = s.replace(/`([^`\n]+)`/g, rich ? '<code class="sl-code">$1</code>' : '<code>$1</code>');
+  // *bold*, _italic_, ~strike~: only when the marks sit at word edges, like Slack
+  [[String.raw`\*`, 'b'], ['_', 'i'], ['~', 's']].forEach(([mk, tag]) => {
+    s = s.replace(new RegExp(String.raw`(^|[\s(])${mk}([^${mk}\n]+?)${mk}(?=$|[\s).,!?:;])`, 'g'), `$1<${tag}>$2</${tag}>`);
+  });
+  return s.replace(/\u0000(\d+)\u0000/g, (_, i) => held[+i]);
+}
+// Lines → paragraphs and (nested) lists. "- " or "* " starts a list item; two spaces or a tab per level.
+function slackBlocks(text) {
+  const out = []; let list = null;
+  for (const line of String(text || '').split('\n')) {
+    const li = line.match(/^([ \t]*)[-*] (.*)$/);
+    if (!li) { list = null; out.push({ type: 'p', text: line }); continue; }
+    const depth = Math.min(2, Math.floor(li[1].replace(/\t/g, '  ').length / 2));
+    if (!list) { list = { type: 'list', items: [] }; out.push(list); }
+    let arr = list.items;
+    for (let d = 0; d < depth && arr.length; d++) arr = arr.at(-1).children;
+    arr.push({ text: li[2], children: [] });
+  }
+  return out;
+}
+const slackList = (items, m, rich, d = 0) => `<ul${rich ? ` class="sl-ul d${d % 3}"` : ''}>${items.map(it =>
+  `<li>${slackInline(it.text, m, rich)}${it.children.length ? slackList(it.children, m, rich, d + 1) : ''}</li>`).join('')}</ul>`;
+function slackTime(str) {
+  const d = new Date(str); if (isNaN(d)) return '';
+  const t = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  const days = Math.round((new Date(new Date().toDateString()) - new Date(d.toDateString())) / 864e5);
+  if (days === 0) return t;
+  if (days === 1) return `Yesterday at ${t}`;
+  if (days > 1 && days < 7) return `${d.toLocaleDateString('en-US', { weekday: 'long' })} at ${t}`;
+  return `${d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} at ${t}`;
+}
+function slackHTML(m) {
+  const a = m.author || {}, name = a.name || 'Someone';
+  const body = slackBlocks(m.text).map(b => b.type === 'list' ? slackList(b.items, m, true)
+    : b.text.trim() ? `<div class="sl-line">${slackInline(b.text, m, true)}</div>` : '<div class="sl-gap"></div>').join('');
+  const reacts = String(m.reactions || '').split(',').map(r => r.trim()).filter(Boolean).map(r => {
+    const [, emo, n] = r.match(/^(.*?)\s*(\d+)?$/);
+    return `<span class="sl-react"><span>${esc(slackEmoji(emo))}</span>${n ? `<b>${n}</b>` : ''}</span>`;
+  }).join('');
+  return `<div class="sl-root${m.theme === 'light' ? ' light' : ''}" style="width:${+m.width || 640}px"><div class="sl-msg">
+    ${avatarHTML({ name, avatar: a.avatar, shape: 'square' }, 'sl-av')}<div class="sl-main">
+    <div class="sl-head"><b class="sl-name">${esc(name)}</b><span class="sl-time">${esc(slackTime(m.time))}</span></div>
+    <div class="sl-body">${body}</div>${m.edited ? '<div class="sl-edited">(edited)</div>' : ''}
+    ${reacts ? `<div class="sl-reacts">${reacts}</div>` : ''}</div></div></div>`;
+}
+// Clipboard payloads: rich HTML (real lists) plus a plain-text fallback with typed bullets
+function slackClipboard(m) {
+  const blocks = slackBlocks(m.text), marks = ['•', '◦', '▪'];
+  const html = '<meta charset="utf-8">' + blocks.map(b => b.type === 'list' ? slackList(b.items, m, false)
+    : b.text.trim() ? `<p>${slackInline(b.text, m, false)}</p>` : '<p><br></p>').join('');
+  const plain = (items, d) => items.flatMap(it => [`${'    '.repeat(d)}${marks[d % 3]} ${slackEmoji(it.text)}`, ...plain(it.children, d + 1)]);
+  // A list right under a typed "• label" line is indented one level, so it reads as that label's sub-items
+  const text = blocks.flatMap((b, i) => b.type === 'list' ? plain(b.items, /^\s*•/.test(blocks[i - 1]?.text || '') ? 1 : 0)
+    : [slackEmoji(b.text)]).join('\n');
+  return { html, text };
+}
+async function copyForSlack(m = state) {
+  const { html, text } = slackClipboard(m), done = 'Copied for Slack: paste with ⌘V, then re-pick each @-mention';
+  if (navigator.clipboard?.write && window.ClipboardItem) {
+    try {
+      await withTimeout(navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([text], { type: 'text/plain' }) })]), 3000);
+      return toast(done);
+    } catch (err) { console.warn('Clipboard API failed', err); }
+  }
+  // Fallback: select a hidden rich-text copy and use the copy command
+  const box = document.createElement('div');
+  box.contentEditable = 'true'; box.style.cssText = 'position:fixed;left:-9999px;top:0'; box.innerHTML = html;
+  document.body.appendChild(box);
+  const range = document.createRange(); range.selectNodeContents(box);
+  const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+  let ok = false; try { ok = document.execCommand('copy'); } catch {}
+  sel.removeAllRanges(); box.remove();
+  toast(ok ? done : 'This browser blocked the clipboard');
+}
+function toDoc(p) { // accepts a canvas, or a single mock from older files
+  if (p?.mocks?.length) return { mocks: p.mocks.map(toMock), selected: p.selected, view: p.view || null };
+  if (p?.tweets?.length || (p?.kind === 'email' && p.blocks) || (p?.kind === 'slack' && typeof p.text === 'string')) return { mocks: [toMock(p)], selected: null, view: null };
+  return null;
+}
+function initialDoc() {
+  try { const d = toDoc(JSON.parse(document.getElementById('preset').textContent || 'null')); if (d) return d; } catch {}
+  return { mocks: [toMock(defaults())], selected: null, view: null };
+}
+// Fingerprint of this file's built-in mock. If the file is updated with a different mock,
+// that new mock wins over the old autosave (autosaves from before this check are kept).
+const PRESET_SIG = (() => { let h = 0; for (const c of document.getElementById('preset').textContent) h = (h * 31 + c.charCodeAt(0)) | 0; return String(h); })();
+/* A file holds a "book" of canvases: { canvases: [{ id, name, doc }], current }.
+   `doc` is the open canvas (an entry inside the book), so editing it updates the book. */
+const wrapDoc = (d, name = 'Canvas 1') => ({ id: uid(), name, doc: d });
+function toBook(p) { // accepts a book, a single canvas, or a single mock from older files
+  if (p?.canvases?.length) {
+    // `share` remembers the gist a canvas was shared as, so sharing it again keeps the same link
+    const canvases = p.canvases.map(c => ({ id: c.id || uid(), name: c.name || 'Canvas', doc: toDoc(c.doc), ...(c.share ? { share: c.share } : {}) })).filter(c => c.doc);
+    if (canvases.length) return { canvases, current: p.current };
+  }
+  const d = toDoc(p);
+  return d ? { canvases: [wrapDoc(d)], current: null } : null;
+}
+function initialBook() {
+  try { const b = toBook(JSON.parse(document.getElementById('preset').textContent || 'null')); if (b) return b; } catch {}
+  return { canvases: [wrapDoc(initialDoc())], current: null };
+}
+// A first visit with nothing built in: an opened share link can replace the sample canvas outright
+const firstVisit = (() => { try { return localStorage.getItem(STORE) === null; } catch { return true; } })()
+  && !document.getElementById('preset').textContent.trim();
+let book;
+try {
+  const saved = JSON.parse(localStorage.getItem(STORE));
+  const savedSig = localStorage.getItem(STORE + ':sig');
+  const presetChanged = savedSig !== null && savedSig !== PRESET_SIG;
+  book = (!presetChanged && toBook(saved)) || initialBook();
+} catch { book = initialBook(); }
+if (!book.canvases.some(c => c.id === book.current)) book.current = book.canvases[0].id;
+const currentCanvas = () => book.canvases.find(c => c.id === book.current);
+let doc = currentCanvas().doc;
+if (!doc.mocks.some(m => m.id === doc.selected)) doc.selected = doc.mocks[0].id;
+let state = doc.mocks.find(m => m.id === doc.selected);
+// Canvas selection: `selIds` can hold several mocks; `doc.selected`/`state` is the one the editor shows
+let selIds = new Set([doc.selected]);
+
+// Storage has a small quota, so a save can fail once uploads pile up. Retry without them rather than
+// losing the edit: blob URLs are dead after a reload anyway, and data URLs are what makes it big.
+let uploadsDropped = false;
+function save() {
+  const strip = (keepUploads) => JSON.stringify(book, (k, v) => {
+    if (k === 'media' && Array.isArray(v)) return v.filter(m => !m.src.startsWith('blob:') && (keepUploads || !m.src.startsWith('data:')));
+    // Avatars, card and block images and the brand logo are plain strings, not media entries
+    if (typeof v === 'string' && (v.startsWith('blob:') || (!keepUploads && v.startsWith('data:')))) return '';
+    return v;
+  });
+  try { localStorage.setItem(STORE, strip(true)); uploadsDropped = false; }
+  catch {
+    try { localStorage.setItem(STORE, strip(false)); }
+    catch { toast('Couldn’t save: browser storage is full, so this edit won’t be here after a reload'); return; }
+    if (!uploadsDropped) { uploadsDropped = true; toast('Saved without uploaded images: they don’t fit in browser storage'); }
+  }
+  try { localStorage.setItem(STORE + ':sig', PRESET_SIG); } catch {}
+  releaseUnusedVideos();
+}
+
+// Uploaded videos are blob: URLs holding the whole file in memory, and each mock showing one keeps a
+// <video> in videoCache. Every removal path (media, tweet, mock, cut, canvas, reset) ends in save(),
+// so sweep here: drop players for clips no mock shows, and revoke blob URLs nothing references.
+// The last copied selection counts as a reference, so cut + paste still works.
+let clipboardBlobs = new Set();
+const liveBlobs = new Set();
+function releaseUnusedVideos() {
+  const keys = new Set(), blobs = new Set(clipboardBlobs);
+  book.canvases.forEach(c => c.doc.mocks.forEach(m => {
+    const seen = new Map(); // same occurrence numbering as renderMock
+    m.tweets?.forEach(t => t.media.forEach(md => {
+      const n = seen.get(md.src) ?? 0; seen.set(md.src, n + 1);
+      keys.add(videoKey(m, n, md.src));
+      if (md.src.startsWith('blob:')) blobs.add(md.src);
+    }));
+  }));
+  videoCache.forEach((video, key) => {
+    if (keys.has(key)) return;
+    video.pause(); video.removeAttribute('src'); video.load(); video.remove();
+    videoCache.delete(key);
+  });
+  liveBlobs.forEach(src => { if (!blobs.has(src)) { URL.revokeObjectURL(src); liveBlobs.delete(src); } });
+  blobs.forEach(src => liveBlobs.add(src));
+}
+
+function setPath(obj, path, val) {
+  const keys = path.split('.'); let o = obj;
+  for (let i = 0; i < keys.length - 1; i++) o = o[keys[i]];
+  o[keys.at(-1)] = val;
+}
+function getPath(obj, path) { return path.split('.').reduce((o, k) => o?.[k], obj); }
+
+// In-page replacement for window.prompt(), which embedded browsers often don't support
+function askText(title, value = '', { confirmOnly = false } = {}) {
+  return new Promise(resolve => {
+    const modal = $('#ask-modal'), input = $('#ask-input');
+    $('#ask-title').textContent = title; input.value = value; input.hidden = confirmOnly; modal.hidden = false;
+    if (confirmOnly) setTimeout(() => $('#ask-form').querySelector('[type=submit]').focus(), 0);
+    const finish = resolve; resolve = v => finish(confirmOnly ? v !== null : v);
+    setTimeout(() => { input.focus(); input.select(); }, 0);
+    const done = v => { modal.hidden = true; $('#ask-form').onsubmit = $('#ask-cancel').onclick = input.onkeydown = null; resolve(v); };
+    $('#ask-form').onsubmit = e => { e.preventDefault(); done(confirmOnly ? '' : input.value.trim() || null); };
+    modal.onkeydown = e => { if (e.key === 'Escape') done(null); };
+    $('#ask-cancel').onclick = () => done(null);
+    input.onkeydown = e => { if (e.key === 'Escape') done(null); };
+  });
+}
+// In-page replacement for window.confirm(); resolves true/false
+const askConfirm = title => askText(title, '', { confirmOnly: true });
+let toastT;
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2200); }
+
+/* ---------------- Icons ---------------- */
+const svg = (inner, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ${extra}>${inner}</svg>`;
+const SPEAKER = '<path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/>';
+const IC = {
+  muted: svg(SPEAKER + '<line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/>', 'stroke-width="2"'),
+  sound: svg(SPEAKER + '<path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 5.6a9 9 0 0 1 0 12.8"/>', 'stroke-width="2"'),
+  grok: svg('<circle cx="12" cy="12" r="7.2"/><path d="M2.5 21.5 21.5 2.5"/>', 'stroke-width="2"'),
+  reply: svg('<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>'),
+  repost: svg('<path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/>'),
+  like: svg('<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>'),
+  views: svg('<line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>'),
+  bookmark: svg('<path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>'),
+  share: svg('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/>'),
+  more: svg('<circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>', 'stroke-width="2.4"'),
+};
+const BADGE_COLORS = { blue: '#1d9bf0', gold: '#e2b719', gray: '#829aab' };
+const badge = v => BADGE_COLORS[v] ? `<svg class="badge" viewBox="0 0 22 22"><path fill="${BADGE_COLORS[v]}" d="M20.4 11c0-1.3-.8-2.4-2-3 .4-1.3.2-2.6-.7-3.5s-2.3-1.1-3.5-.7c-.6-1.2-1.7-2-3-2s-2.4.8-3 2c-1.3-.4-2.6-.2-3.5.7s-1.1 2.3-.7 3.5c-1.2.6-2 1.7-2 3s.8 2.4 2 3c-.4 1.3-.2 2.6.7 3.5s2.3 1.1 3.5.7c.6 1.2 1.7 2 3 2s2.4-.8 3-2c1.3.4 2.6.2 3.5-.7s1.1-2.3.7-3.5c1.2-.6 2-1.7 2-3z"/><path fill="#fff" d="M9.6 15.1 6.3 11.8l1.3-1.3 2 2 4.8-5.2 1.3 1.2z"/></svg>` : '';
+
+/* ---------------- Formatting ---------------- */
+// Links as X detects them: with a scheme, starting with www., or a bare domain on a common TLD
+// (lmstudio.ai/bionic). Not emails or file names like notes.txt. Shared by rendering, cards and counting.
+const URL_SRC = String.raw`https?:\/\/[^\s]+|www\.[^\s]+|(?<![\w@.\/-])(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+`
+  + String.raw`(?:com|org|net|io|ai|dev|app|co|gg|xyz|me|so|sh|tv|ly|to|us|uk|de|fr|jp|ca|info|edu|gov|link|page|site|tech|cloud)`
+  + String.raw`(?![\w-])(?:\/[^\s]*)?`;
+const URL_RE = new RegExp(`(${URL_SRC})`, 'giu');
+function fmtText(raw) {
+  const re = new RegExp(String.raw`(${URL_SRC})|(@\w{1,15})|(#[\p{L}\p{N}_]+)|(\$[A-Za-z]{1,6}\b)`, 'giu');
+  let out = '', last = 0, m;
+  while ((m = re.exec(raw))) {
+    let tok = m[0], start = m.index;
+    const prev = raw[start - 1];
+    if (!m[1] && prev && /[\p{L}\p{N}_]/u.test(prev)) continue; // e.g. emails, mid-word #
+    let trail = '';
+    if (m[1]) { const t = tok.match(/[.,!?;:)\]'"]+$/); if (t) { trail = t[0]; tok = tok.slice(0, -trail.length); } }
+    out += esc(raw.slice(last, start));
+    if (m[1]) {
+      let disp = tok.replace(/^https?:\/\/(www\.)?/, '').replace(/^www\./, '');
+      if (disp.length > 26) disp = disp.slice(0, 25) + '…';
+      out += `<a>${esc(disp)}</a>`;
+    } else out += `<a>${esc(tok)}</a>`;
+    out += esc(trail);
+    last = start + m[0].length;
+  }
+  return out + esc(raw.slice(last));
+}
+/* X's weighted length (twitter-text v3): code points in these ranges count 1 and everything else 2
+   (so arrows like → count 2), an emoji counts 2 however many code points it has, and a link counts 23
+   however long it is. Text is NFC-normalized first, as X does. */
+const LIGHT_RANGES = [[0x0000, 0x10FF], [0x2000, 0x200D], [0x2010, 0x201F], [0x2032, 0x2037]];
+const URL_WEIGHT = 23, POST_LIMIT = 280, DESKTOP_LINE_LIMIT = 10;
+const graphemes = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+const isEmoji = g => /\p{Extended_Pictographic}|\p{Regional_Indicator}|\u20E3/u.test(g);
+const codePointWeight = cp => LIGHT_RANGES.some(([lo, hi]) => cp >= lo && cp <= hi) ? 1 : 2;
+// [start, end, weight] for each link (whole) and each grapheme between them
+function weightedPieces(text) {
+  const pieces = []; let last = 0;
+  const addText = (from, to) => {
+    for (const { segment, index } of graphemes.segment(text.slice(from, to))) {
+      const weight = isEmoji(segment) ? 2 : [...segment].reduce((sum, ch) => sum + codePointWeight(ch.codePointAt(0)), 0);
+      pieces.push([from + index, from + index + segment.length, weight]);
+    }
+  };
+  for (const m of text.matchAll(URL_RE)) {
+    const url = m[0].replace(/[.,!?;:)\]'"]+$/, ''); // trailing punctuation isn't part of the link
+    addText(last, m.index);
+    pieces.push([m.index, m.index + url.length, URL_WEIGHT]);
+    last = m.index + url.length;
+  }
+  addText(last, text.length);
+  return pieces;
+}
+const tweetLength = text => weightedPieces(text.normalize('NFC')).reduce((sum, piece) => sum + piece[2], 0);
+// Where the timeline cuts a post for "Show more": past 280 weighted characters, at the last space or line
+// break before the limit, and on desktop also after 10 lines. X doesn't document the exact rule; this is
+// the common model. Returns the visible text, or null when nothing is cut.
+function timelineCut(text, desktop) {
+  text = text.normalize('NFC');
+  let end = text.length;
+  if (desktop) {
+    let lines = 0, i = -1;
+    while ((i = text.indexOf('\n', i + 1)) !== -1) if (++lines === DESKTOP_LINE_LIMIT) { end = i; break; }
+  }
+  let total = 0;
+  for (const [start, , weight] of weightedPieces(text)) {
+    if ((total += weight) <= POST_LIMIT) continue;
+    const before = text.slice(0, start), space = Math.max(before.lastIndexOf(' '), before.lastIndexOf('\n'));
+    end = Math.min(end, space > 0 ? space : start);
+    break;
+  }
+  return text.slice(end).trim() ? text.slice(0, end).trimEnd() : null;
+}
+function fmtNum(v) {
+  v = String(v ?? '').trim();
+  if (!/^\d+(\.\d+)?$/.test(v)) return v; // allow "1.2M" etc as-is
+  const n = +v;
+  const c = (x, s) => (Math.floor(x * 10) / 10).toString() + s; // X style: 2K, 9.1K, 282.3K
+  if (n < 1e3) return String(n);
+  if (n < 1e6) return c(n / 1e3, 'K');
+  if (n < 1e9) return c(n / 1e6, 'M');
+  return c(n / 1e9, 'B');
+}
+function relTime(str) {
+  const d = new Date(str); if (isNaN(d)) return '';
+  const s = (Date.now() - d) / 1000;
+  if (s >= 0 && s < 60) return Math.max(1, Math.floor(s)) + 's';
+  if (s >= 0 && s < 3600) return Math.floor(s / 60) + 'm';
+  if (s >= 0 && s < 86400) return Math.floor(s / 3600) + 'h';
+  const same = d.getFullYear() === new Date().getFullYear();
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', ...(same ? {} : { year: 'numeric' }) });
+}
+function fullTime(str) {
+  const d = new Date(str); if (isNaN(d)) return '';
+  return d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) + ' · ' +
+         d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+function hue(s) { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) % 360; return h; }
+function avatarHTML(a, cls = 'av') {
+  if (a.shape === 'square') cls += ' sq';
+  if (a.avatar) return `<img class="${cls}" src="${esc(a.avatar)}" alt="">`;
+  const n = a.name || a.handle || '?';
+  return `<div class="${cls} init" style="background:hsl(${hue(n)},55%,50%)">${esc([...n][0].toUpperCase())}</div>`;
+}
+const resolveAuthor = a => ({ name: a.name || 'Someone', handle: a.handle || 'someone', avatar: a.avatar, verified: a.verified, shape: a.shape || 'circle' });
+let renderingMock = null; // the mock being drawn; per-mock display options come from here, not the selection
+const toolsHTML = () => `<span class="tools">${renderingMock.grok ? `<span class="grok" style="display:flex">${IC.grok}</span>` : ''}<span style="display:flex">${IC.more}</span></span>`;
+
+/* ---------------- Preview ---------------- */
+function mediaHTML(media) {
+  if (!media.length) return '';
+  const items = media.slice(0, 4);
+  return `<div class="media m${items.length}">${items.map(m => {
+    // Images can be shown "as video" (e.g. a video's first frame) with a length label + mute button
+    const overlay = `<span class="dur" ${m.duration ? 'data-fixed' : ''}>${esc(m.duration || '')}</span><button class="mute" data-mute>${IC.muted}</button>`;
+    if (m.type === 'video') return `<div class="mi vid" data-vsrc="${esc(m.src)}">${overlay}</div>`;
+    return `<div class="mi"><img src="${esc(m.src)}" alt="">${m.asVideo ? overlay : ''}</div>`;
+  }).join('')}</div>`;
+}
+// X turns a link at the very end of a post (with no media attached) into a preview card and hides the URL text.
+function linkCard(t) {
+  const card = t.card || blankCard();
+  if (!card.on || t.media.length) return null;
+  const urls = [...t.text.matchAll(URL_RE)]; const last = urls.at(-1);
+  if (!last || t.text.slice(last.index + last[0].length).trim()) return null;
+  const url = last[0].replace(/[.,!?;:)\]'"]+$/, '');
+  let domain = card.domain.trim();
+  if (!domain) { try { domain = new URL(url.startsWith('http') ? url : 'https://' + url).hostname.replace(/^www\./, ''); } catch { domain = url; } }
+  return { text: t.text.slice(0, last.index).trimEnd(), card, domain, url };
+}
+const LINK_ICON = svg('<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>', 'stroke-width="1.6"');
+function cardHTML(lc) {
+  if (!lc) return '';
+  const { card, domain } = lc;
+  if (card.image) return `<div class="lcard large"><img src="${esc(card.image)}" alt="">${card.title ? `<span class="lc-title">${esc(card.title)}</span>` : ''}</div>
+    <div class="lc-from">From ${esc(domain)}</div>`;
+  return `<div class="lcard small"><div class="lc-icon">${LINK_ICON}</div>
+    <div class="lc-text"><span class="muted">${esc(domain)}</span><span>${esc(card.title || lc.url)}</span></div></div>`;
+}
+function actionsHTML(t, detail) {
+  if (!renderingMock.showActions) return '';
+  const n = v => { const f = fmtNum(v); return f ? `<span>${esc(f)}</span>` : ''; };
+  return `<div class="acts">
+    <span class="act">${IC.reply}${n(t.replies)}</span>
+    <span class="act ${t.reposted ? 'rt' : ''}">${IC.repost}${n(t.reposts)}</span>
+    <span class="act ${t.liked ? 'liked' : ''}">${IC.like}${n(t.likes)}</span>
+    ${detail ? `<span class="act ${t.bookmarked ? 'bm' : ''}">${IC.bookmark}${n(t.bookmarks)}</span>` : `<span class="act">${IC.views}${n(t.views)}</span>`}
+    ${detail ? `<span class="act">${IC.share}</span>` : `<span class="right"><span class="act ${t.bookmarked ? 'bm' : ''}">${IC.bookmark}</span><span class="act">${IC.share}</span></span>`}
+  </div>`;
+}
+// Timeline posts get X's "Show more" cut; the focused (opened) post shows in full, as on X
+function bodyHTML(t, { timeline = false } = {}) {
+  const lc = linkCard(t), text = lc ? lc.text : t.text;
+  const shown = timeline && !renderingMock.fullText ? timelineCut(text, renderingMock.device !== 'mobile') : null;
+  return `<div class="text">${fmtText(shown ?? text)}</div>${shown === null ? '' : '<div class="show-more">Show more</div>'}`
+    + `${mediaHTML(t.media)}${cardHTML(lc)}`;
+}
+function timelineTweet(t, a, { lineBelow, lineAbove }) {
+  return `<article class="tw" data-tid="${esc(t.id)}">
+    <div class="av-col">${lineAbove ? '<div class="tline above"></div>' : ''}${avatarHTML(a)}${lineBelow ? '<div class="tline"></div>' : ''}</div>
+    <div class="body">
+      <div class="hdr"><span class="name">${esc(a.name)}</span>${badge(a.verified)}
+        <span class="muted handle">@${esc(a.handle)}</span><span class="muted when">· ${esc(relTime(t.time))}</span>
+        ${toolsHTML()}</div>
+      ${bodyHTML(t, { timeline: true })}
+      ${actionsHTML(t, false)}
+    </div>
+  </article>`;
+}
+function detailTweet(t, a, { solo, lineAbove }) {
+  const views = fmtNum(t.views);
+  return `<article class="tw detail ${solo ? 'solo' : ''}" data-tid="${esc(t.id)}">
+    <div class="d-hdr"><div class="d-av">${lineAbove ? '<div class="tline above"></div>' : ''}${avatarHTML(a)}</div>
+      <div class="who"><div class="namerow"><span class="name">${esc(a.name)}</span>${badge(a.verified)}</div>
+      <div class="muted handle">@${esc(a.handle)}</div></div>
+      ${toolsHTML()}</div>
+    ${bodyHTML(t)}
+    <div class="d-meta">${esc(fullTime(t.time))}${views ? ` · <b>${esc(views)}</b> Views` : ''}</div>
+    ${actionsHTML(t, true)}
+  </article>`;
+}
+
+const videoCache = new Map(); // keyed per mock and occurrence, so the same clip can play in several places
+const videoKey = (m, occurrence, src) => `${m.id}|${occurrence}|${src}`;
+function getVideo(key, src) {
+  let v = videoCache.get(key);
+  if (!v) {
+    v = document.createElement('video');
+    Object.assign(v, { src, muted: true, loop: true, playsInline: true, autoplay: true, preload: 'auto' });
+    v.addEventListener('loadedmetadata', () => setDur(v));
+    v.addEventListener('click', () => v.paused ? v.play() : v.pause());
+    videoCache.set(key, v);
+  }
+  return v;
+}
+function setDur(v) {
+  const d = v.parentElement?.querySelector('.dur'); if (!d || 'fixed' in d.dataset || !isFinite(v.duration)) return;
+  const s = Math.round(v.duration); d.textContent = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+}
+
+/* ---------------- Canvas ---------------- */
+const canvas = $('#canvas'), world = $('#world');
+let previewVersion = 0; // bumps on every render so a pre-rendered copy image is never stale
+const KIND_LABEL = { tweet: 'Tweet · ', email: 'Email · ', slack: 'Slack · ' };
+const mockLabel = m => KIND_LABEL[kindOf(m)] + (m.name?.trim() || (m.kind === 'email'
+  ? (m.subject || 'Untitled email').slice(0, 60)
+  : m.kind === 'slack' ? slackEmoji((m.text || '').split('\n')[0]).replace(/[*_~]/g, '').trim().slice(0, 60) || 'Untitled message'
+  : (m.tweets[0]?.text || '').split('\n')[0].trim().slice(0, 60) || 'Untitled'));
+function boardEl(m) {
+  let b = world.querySelector(`.board[data-id="${m.id}"]`);
+  if (!b) {
+    b = document.createElement('div'); b.className = 'board'; b.dataset.id = m.id;
+    b.innerHTML = '<div class="board-label"></div><div class="capture"></div>';
+    world.appendChild(b);
+  }
+  return b;
+}
+function renderMock(m) {
+  previewVersion++;
+  renderingMock = m;
+  const b = boardEl(m), cap = b.querySelector('.capture');
+  b.style.left = m.x + 'px'; b.style.top = m.y + 'px';
+  b.classList.toggle('sel', selIds.has(m.id));
+  b.querySelector('.board-label').textContent = mockLabel(m);
+  if (m.kind === 'email') { cap.className = 'capture'; cap.innerHTML = emailHTML(m); return; }
+  if (m.kind === 'slack') { cap.className = 'capture'; cap.innerHTML = slackHTML(m); return; }
+  cap.className = 'capture' + (m.frame === 'card' ? ' framed' : '');
+  let root = cap.querySelector(':scope > .tw-root');
+  if (!root) { cap.innerHTML = '<div class="tw-root"></div>'; root = cap.firstElementChild; }
+  root.dataset.theme = m.theme;
+  const mobile = m.device === 'mobile'; // phone-width layout with X's mobile "Post" header
+  root.classList.toggle('mobile', mobile);
+  root.style.width = (mobile ? 390 : m.width) + 'px';
+  const n = m.tweets.length, f = m.focus - 1; // f = index of focused (detail) tweet, -1 = none
+  const mobileHeader = mobile ? `<div class="tw-mhdr">${svg('<path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>', 'stroke-width="2.2"')}<b>${f >= 0 ? 'Post' : 'Thread'}</b></div>` : '';
+  root.innerHTML = mobileHeader + m.tweets.map((t, i) => {
+    const a = t.customAuthor ? resolveAuthor(t.author) : resolveAuthor(m.author);
+    const lineAbove = i === 0 && m.lineAbove;
+    if (i === f) return detailTweet(t, a, { solo: i === n - 1, lineAbove });
+    return timelineTweet(t, a, { lineBelow: i < n - 1, lineAbove });
+  }).join('');
+  // One player per occurrence: a duplicated tweet repeats the same clip, and a <video> can only be in one place
+  const seen = new Map();
+  root.querySelectorAll('[data-vsrc]').forEach(ph => {
+    const src = ph.dataset.vsrc, n = seen.get(src) ?? 0; seen.set(src, n + 1);
+    const v = getVideo(videoKey(m, n, src), src);
+    ph.prepend(v); setDur(v); v.play().catch(() => {});
+    ph.querySelector('.mute').innerHTML = v.muted ? IC.muted : IC.sound;
+  });
+}
+function renderCanvas() {
+  const ids = new Set(doc.mocks.map(m => m.id));
+  world.querySelectorAll('.board').forEach(b => { if (!ids.has(b.dataset.id)) b.remove(); });
+  doc.mocks.forEach(renderMock);
+  applyView();
+}
+
+// View: pan/zoom of the whole canvas (saved with the file so it reopens where you left it)
+let view = doc.view || { x: 40, y: 60, zoom: 1 };
+function applyView() {
+  world.style.transform = `translate(${view.x}px, ${view.y}px) scale(${view.zoom})`;
+  canvas.style.backgroundPosition = `${view.x}px ${view.y}px`;
+  canvas.style.backgroundSize = `${16 * view.zoom}px ${16 * view.zoom}px`;
+  $('#z-pct').textContent = Math.round(view.zoom * 100) + '%';
+}
+let viewSaveT;
+function viewChanged() { applyView(); doc.view = { ...view }; clearTimeout(viewSaveT); viewSaveT = setTimeout(save, 400); }
+function zoomAt(px, py, z) { // keep the canvas point under (px, py) fixed while zooming
+  z = Math.min(4, Math.max(0.1, z));
+  view.x = px - (px - view.x) * (z / view.zoom); view.y = py - (py - view.y) * (z / view.zoom); view.zoom = z;
+  viewChanged();
+}
+const zoomCenter = z => { const r = canvas.getBoundingClientRect(); zoomAt(r.width / 2, r.height / 2, z); };
+function fitView(boards = [...world.querySelectorAll('.board')]) {
+  const r = canvas.getBoundingClientRect(), pad = 56;
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  boards.forEach(b => { x0 = Math.min(x0, b.offsetLeft); y0 = Math.min(y0, b.offsetTop - 30); x1 = Math.max(x1, b.offsetLeft + b.offsetWidth); y1 = Math.max(y1, b.offsetTop + b.offsetHeight); });
+  if (!isFinite(x0) || !r.width) return;
+  view.zoom = Math.max(0.1, Math.min(1, (r.width - pad * 2) / (x1 - x0), (r.height - pad * 2) / (y1 - y0)));
+  view.x = (r.width - (x1 - x0) * view.zoom) / 2 - x0 * view.zoom;
+  view.y = Math.max(pad, (r.height - (y1 - y0) * view.zoom) / 2) - y0 * view.zoom;
+  viewChanged();
+}
+// Until the user pans or zooms, keep the view fitted as the canvas resizes (e.g. while an
+// embedding frame is still laying out, or when the editor is shown/hidden).
+let autoFit = !doc.view;
+new ResizeObserver(() => { if (autoFit) fitView(); }).observe(canvas);
+$('#z-in').onclick = () => { autoFit = false; zoomCenter(view.zoom * 1.25); };
+$('#z-out').onclick = () => { autoFit = false; zoomCenter(view.zoom / 1.25); };
+$('#z-pct').onclick = () => { autoFit = false; zoomCenter(1); };
+$('#z-fit').onclick = () => fitView();
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  autoFit = false;
+  if (e.ctrlKey || e.metaKey) { // pinch on trackpads arrives as ctrl+wheel
+    const r = canvas.getBoundingClientRect();
+    zoomAt(e.clientX - r.left, e.clientY - r.top, view.zoom * Math.exp(-e.deltaY * 0.01));
+  } else { view.x -= e.deltaX; view.y -= e.deltaY; viewChanged(); }
+}, { passive: false });
+
+function setSelection(ids, primary) {
+  ids = new Set([...ids].filter(id => doc.mocks.some(m => m.id === id)));
+  if (!ids.size) ids.add(primary && doc.mocks.some(m => m.id === primary) ? primary : doc.mocks[0].id);
+  if (!primary || !ids.has(primary)) primary = ids.has(doc.selected) ? doc.selected : [...ids][0];
+  if (primary !== doc.selected) prepared = null;
+  selIds = ids; doc.selected = primary; state = doc.mocks.find(m => m.id === primary);
+  world.querySelectorAll('.board').forEach(b => b.classList.toggle('sel', selIds.has(b.dataset.id)));
+  renderEditor(); save();
+}
+function selectMock(id) { if (doc.selected !== id || selIds.size !== 1) setSelection([id], id); }
+const selectedMocks = () => doc.mocks.filter(m => selIds.has(m.id));
+function revealTweet(tid) { // clicking a tweet on the canvas jumps to its settings
+  const c = $('#editor').querySelector(`.tcard[data-tid="${CSS.escape(tid)}"]`); if (!c) return;
+  c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  c.classList.remove('flash'); void c.offsetWidth; c.classList.add('flash');
+}
+
+/* Pointer:
+   - drag a mock to move it (dragging one of several selected mocks moves them all)
+   - drag the empty background to draw a selection rectangle (Shift adds to the selection)
+   - Space + drag, or middle-button drag, pans; click selects (Shift+click toggles) */
+let drag = null, spaceHeld = false;
+const marquee = $('#marquee');
+canvas.addEventListener('pointerdown', e => {
+  if ((e.button !== 0 && e.button !== 1) || e.target.closest('.zoom-ui')) return;
+  const board = e.target.closest('.board');
+  if (board && e.target.closest('[data-mute], video')) { selectMock(board.dataset.id); return; } // let video controls work
+  e.preventDefault();
+  document.activeElement?.blur?.(); // so Delete / ⌘A act on the canvas, not a text field
+  const base = { sx: e.clientX, sy: e.clientY, moved: false, shift: e.shiftKey };
+  const m = board && doc.mocks.find(x => x.id === board.dataset.id);
+  if (e.button === 1 || spaceHeld) { autoFit = false; drag = { ...base, type: 'pan', vx: view.x, vy: view.y }; }
+  else if (m) {
+    // move the whole selection if this mock is part of it, otherwise just this mock
+    const group = selIds.has(m.id) && !e.shiftKey ? selectedMocks() : [m];
+    drag = { ...base, type: 'move', m, target: e.target, items: group.map(g => ({ g, b: boardEl(g), ox: g.x, oy: g.y })) };
+  } else drag = { ...base, type: 'marquee', before: new Set(selIds) };
+  window.addEventListener('pointermove', onDragMove);
+  window.addEventListener('pointerup', onDragEnd, { once: true });
+});
+function marqueeHits(e) {
+  const r = canvas.getBoundingClientRect();
+  const x0 = Math.min(drag.sx, e.clientX), x1 = Math.max(drag.sx, e.clientX), y0 = Math.min(drag.sy, e.clientY), y1 = Math.max(drag.sy, e.clientY);
+  Object.assign(marquee.style, { left: x0 - r.left + 'px', top: y0 - r.top + 'px', width: x1 - x0 + 'px', height: y1 - y0 + 'px' });
+  return [...world.querySelectorAll('.board')].filter(b => {
+    const br = b.getBoundingClientRect();
+    return br.right > x0 && br.left < x1 && br.bottom > y0 && br.top < y1;
+  }).map(b => b.dataset.id);
+}
+function onDragMove(e) {
+  const dx = e.clientX - drag.sx, dy = e.clientY - drag.sy;
+  if (!drag.moved && Math.hypot(dx, dy) < 4) return;
+  if (!drag.moved) {
+    drag.moved = true;
+    if (drag.type === 'pan') canvas.classList.add('panning');
+    if (drag.type === 'marquee') marquee.hidden = false;
+    if (drag.type === 'move' && drag.items.length === 1) selectMock(drag.m.id);
+  }
+  if (drag.type === 'pan') { view.x = drag.vx + dx; view.y = drag.vy + dy; applyView(); }
+  else if (drag.type === 'move') drag.items.forEach(({ g, b, ox, oy }) => {
+    g.x = Math.round(ox + dx / view.zoom); g.y = Math.round(oy + dy / view.zoom); b.style.left = g.x + 'px'; b.style.top = g.y + 'px';
+  });
+  else { // live preview of what the rectangle will select
+    const hits = new Set(marqueeHits(e));
+    if (drag.shift) drag.before.forEach(id => hits.add(id));
+    drag.hits = hits;
+    world.querySelectorAll('.board').forEach(b => b.classList.toggle('sel', hits.has(b.dataset.id)));
+  }
+}
+function onDragEnd() {
+  window.removeEventListener('pointermove', onDragMove);
+  canvas.classList.remove('panning'); marquee.hidden = true;
+  const d = drag; drag = null;
+  if (d.type === 'pan') return d.moved && viewChanged();
+  if (d.type === 'marquee') {
+    if (!d.moved) return d.shift || selectMock(doc.selected); // clicking empty space keeps just the edited mock
+    return d.hits?.size ? setSelection(d.hits) : setSelection(d.shift ? d.before : [doc.selected]);
+  }
+  if (d.moved) return save();
+  if (d.shift) { // Shift+click toggles a mock in or out of the selection
+    const ids = new Set(selIds);
+    if (ids.has(d.m.id) && ids.size > 1) ids.delete(d.m.id); else ids.add(d.m.id);
+    return setSelection(ids, ids.has(d.m.id) ? d.m.id : undefined);
+  }
+  selectMock(d.m.id);
+  const art = d.target.closest('article[data-tid]'), eb = d.target.closest('[data-bid]');
+  if (art) revealTweet(art.dataset.tid);
+  else if (eb) revealBlock(eb.dataset.bid);
+}
+const typing = () => /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName) || document.activeElement?.isContentEditable;
+document.addEventListener('keydown', e => { if (e.code === 'Space' && !typing()) { e.preventDefault(); spaceHeld = true; canvas.classList.add('space'); } });
+document.addEventListener('keyup', e => { if (e.code === 'Space') { spaceHeld = false; canvas.classList.remove('space'); } });
+
+// Add / duplicate / delete mocks
+function spotRightOf() {
+  let right = -Infinity; world.querySelectorAll('.board').forEach(b => right = Math.max(right, b.offsetLeft + b.offsetWidth));
+  return { x: (isFinite(right) ? right : 0) + 80, y: state.y };
+}
+function addMock(m) {
+  doc.mocks.push(m); doc.selected = null; selectMock(m.id); renderCanvas();
+  const b = boardEl(m), r = canvas.getBoundingClientRect(); // pan so the new mock is in view
+  view.x = r.width / 2 - (m.x + b.offsetWidth / 2) * view.zoom; view.y = Math.max(56, r.height * 0.15) - m.y * view.zoom + 30 * view.zoom;
+  viewChanged();
+}
+const lastOfKind = kind => doc.mocks.filter(m => kindOf(m) === kind).at(-1);
+// Blank mocks that reuse the look of an existing one (author & appearance, or sender & brand)
+function blankTweetLike(base = defaults()) {
+  return { ...Object.fromEntries(STYLE_KEYS.map(k => [k, base[k]])), focus: 1, author: structuredClone(base.author), tweets: [newTweet()] };
+}
+function blankEmailLike(base) { // with no base, the first email gets the sample content
+  return base
+    ? { kind: 'email', ...emailStarter(), sender: structuredClone(base.sender), brand: structuredClone(base.brand), sample: base.sample, device: base.device, scheme: base.scheme }
+    : { kind: 'email' };
+}
+$('#btn-new-tweet').onclick = () => {
+  addMock(toMock({ ...blankTweetLike(lastOfKind('tweet')), ...spotRightOf() }));
+  $('#editor textarea')?.focus();
+};
+$('#btn-new-email').onclick = () => addMock(toMock({ ...blankEmailLike(lastOfKind('email')), ...spotRightOf() }));
+function blankSlackLike(base) { // reuses the author, theme and mention list; the first one gets the sample text
+  return base
+    ? { kind: 'slack', theme: base.theme, width: base.width, author: structuredClone(base.author), people: base.people, text: '', time: nowLocal() }
+    : { kind: 'slack' };
+}
+$('#btn-new-slack').onclick = () => { addMock(toMock({ ...blankSlackLike(lastOfKind('slack')), ...spotRightOf() })); $('#editor textarea')?.focus(); };
+// Add several mocks to the open canvas, keeping their relative layout, to the right of what's there
+function addMocksToCanvas(mocks) {
+  let right = -Infinity, top = Infinity;
+  world.querySelectorAll('.board').forEach(b => { right = Math.max(right, b.offsetLeft + b.offsetWidth); top = Math.min(top, b.offsetTop); });
+  const x0 = Math.min(...mocks.map(m => m.x || 0)), y0 = Math.min(...mocks.map(m => m.y || 0));
+  const added = mocks.map(m => toMock({ ...structuredClone(m),
+    x: (isFinite(right) ? right + 120 : 0) + (m.x || 0) - x0, y: (isFinite(top) ? top : 0) + (m.y || 0) - y0 }));
+  freshIds({ mocks: added, selected: null });
+  doc.mocks.push(...added); renderCanvas(); setSelection(added.map(m => m.id), added[0].id);
+  fitView(added.map(boardEl)); save();
+  return added;
+}
+const IMPORTS_KEY = STORE + ':imports';
+function removeMocksWithText(text, onlyKind) {
+  const enc = JSON.stringify(String(text)).slice(1, -1);
+  let n = 0;
+  book.canvases.forEach(c => {
+    const keep = c.doc.mocks.filter(m => !((!onlyKind || kindOf(m) === onlyKind) && JSON.stringify(m).includes(enc)));
+    if (keep.length && keep.length < c.doc.mocks.length) { n += c.doc.mocks.length - keep.length; c.doc.mocks = keep; } // never empty a canvas
+  });
+  if (n) { if (!doc.mocks.some(m => m.id === doc.selected)) { selIds = new Set(); doc.selected = null; selectMock(doc.mocks[0].id); } renderCanvas(); }
+  return n;
+}
+// updates: [{ match: exact text, onlyKind?, set: { fields to replace, e.g. tweets } }]
+function updateMocksMatching(updates) {
+  let n = 0;
+  updates.forEach(u => {
+    const enc = JSON.stringify(String(u.match)).slice(1, -1);
+    book.canvases.forEach(c => c.doc.mocks.forEach(m => {
+      if (u.onlyKind && kindOf(m) !== u.onlyKind) return;
+      if (!JSON.stringify(m).includes(enc)) return;
+      Object.assign(m, structuredClone(u.set));
+      m.tweets?.forEach(t => t.id = uid()); m.blocks?.forEach(b => b.id = uid());
+      n++;
+    }));
+  });
+  return n;
+}
+// Exact-text edits across every mock in every canvas (only exact matches change, so hand edits are left alone)
+function replaceTextInMocks(pairs, onlyKind) { // onlyKind: 'email' or 'tweet' limits which mocks are touched
+  const enc = s => JSON.stringify(String(s)).slice(1, -1); // match the text as it appears inside JSON
+  let n = 0;
+  book.canvases.forEach(c => c.doc.mocks.forEach(m => {
+    if (onlyKind && kindOf(m) !== onlyKind) return;
+    const before = JSON.stringify(m); let s = before;
+    pairs.forEach(([from, to]) => { s = s.split(enc(from)).join(enc(to)); });
+    if (s !== before) { Object.assign(m, JSON.parse(s)); n++; }
+  }));
+  return n;
+}
+function applyImports() { // applies any not-yet-applied imports embedded in this file: added mocks and/or text edits
+  let list = []; try { list = JSON.parse(document.getElementById('imports')?.textContent || '[]'); } catch {}
+  let done; try { done = new Set(JSON.parse(localStorage.getItem(IMPORTS_KEY)) || []); } catch { done = new Set(); }
+  const fresh = list.filter(x => x?.id && (x.mocks?.length || x.replaceText?.length || x.removeText || x.updateMocks?.length) && !done.has(x.id));
+  fresh.forEach(x => {
+    done.add(x.id);
+    if (x.newCanvas && x.mocks?.length) { // a separate canvas, so existing ones stay untouched
+      const d = freshIds({ mocks: x.mocks.map(m => toMock(structuredClone(m))), selected: null, view: null });
+      const c = wrapDoc(d, x.newCanvas); book.canvases.push(c); switchCanvas(c.id);
+      toast(`Added the canvas “${x.newCanvas}” with ${x.mocks.length} mock${x.mocks.length === 1 ? '' : 's'}`);
+      return;
+    }
+    if (x.canvas) { const target = book.canvases.find(c => c.name === x.canvas); if (target && target.id !== book.current) switchCanvas(target.id); } // aim at a named canvas
+    // removeText: drop mocks containing this exact text (e.g. an older set being replaced by a new layout)
+    const removed = x.removeText ? removeMocksWithText(x.removeText, x.onlyKind) : 0;
+    if (x.mocks?.length && (!x.addOnlyIfRemoved || removed)) { addMocksToCanvas(x.mocks); toast(`Added ${x.mocks.length} mock${x.mocks.length === 1 ? '' : 's'} to “${currentCanvas().name}”${x.label ? `: ${x.label}` : ''}`); }
+    if (x.updateMocks?.length) { // restructure matching mocks in place (keeps their position, label and id)
+      const n = updateMocksMatching(x.updateMocks);
+      if (n) { renderCanvas(); renderEditor(); save(); toast(`Updated ${n} mock${n === 1 ? '' : 's'}${x.label ? `: ${x.label}` : ''}`); }
+    }
+    if (x.replaceText?.length) {
+      const n = replaceTextInMocks(x.replaceText, x.onlyKind);
+      if (n) { renderCanvas(); renderEditor(); save(); toast(`Updated ${n} mock${n === 1 ? '' : 's'}${x.label ? `: ${x.label}` : ''}`); }
+    }
+  });
+  if (fresh.length) try { localStorage.setItem(IMPORTS_KEY, JSON.stringify([...done])); } catch {}
+  return fresh.length > 0;
+}
+
+/* ---------------- Canvases ---------------- */
+function switchCanvas(id) {
+  book.current = id; doc = currentCanvas().doc;
+  if (!doc.mocks.some(m => m.id === doc.selected)) doc.selected = doc.mocks[0].id;
+  state = doc.mocks.find(m => m.id === doc.selected); prepared = null; selIds = new Set([doc.selected]);
+  view = doc.view ? { ...doc.view } : { x: 40, y: 60, zoom: 1 };
+  autoFit = !doc.view;
+  renderEditor(); renderCanvas();
+  if (!doc.view) requestAnimationFrame(() => fitView());
+  updateCanvasMenu(); save();
+}
+function freshIds(d) { // copies get new ids so they never collide with the original
+  d.mocks.forEach(m => { const old = m.id; m.id = uid(); if (d.selected === old) d.selected = m.id;
+    m.tweets?.forEach(t => t.id = uid()); m.blocks?.forEach(b => b.id = uid()); });
+  return d;
+}
+function updateCanvasMenu() {
+  const cur = currentCanvas();
+  $('#cv-name').textContent = cur.name;
+  document.title = `${cur.name} — Social post mocker`;
+  $('#cv-menu').innerHTML = `<div class="cv-head">Canvases in this file</div>
+    ${book.canvases.map(c => `<button class="cv-item ${c.id === book.current ? 'cur' : ''}" data-cv="${esc(c.id)}">
+      <span class="cv-check">${c.id === book.current ? '✓' : ''}</span><span class="n">${esc(c.name)}</span>
+      <span class="c">${c.doc.mocks.length} mock${c.doc.mocks.length === 1 ? '' : 's'}</span></button>`).join('')}
+    <div class="cv-sep"></div>
+    <button class="cv-item" data-cv-action="new"><span class="cv-check">＋</span><span class="n">New canvas</span></button>
+    <button class="cv-item" data-cv-action="rename"><span class="cv-check"></span><span class="n">Rename “${esc(cur.name)}”…</span></button>
+    <button class="cv-item" data-cv-action="dup"><span class="cv-check"></span><span class="n">Duplicate canvas</span></button>
+    <button class="cv-item danger" data-cv-action="del" ${book.canvases.length === 1 ? 'disabled style="opacity:.4;cursor:default"' : ''}><span class="cv-check"></span><span class="n">Delete canvas</span></button>
+    <div class="cv-sep"></div>
+    <button class="cv-item" data-cv-action="open"><span class="cv-check"></span><span class="n">Open a saved file…</span></button>
+    <button class="cv-item danger" data-cv-action="reset"><span class="cv-check"></span><span class="n">Reset this file…</span></button>`;
+}
+const cvMenu = $('#cv-menu');
+const closeCvMenu = () => { cvMenu.hidden = true; };
+$('#cv-btn').onclick = e => { e.stopPropagation(); if (cvMenu.hidden) updateCanvasMenu(); cvMenu.hidden = !cvMenu.hidden; };
+document.addEventListener('pointerdown', e => { if (!cvMenu.hidden && !e.target.closest('.cv-wrap')) closeCvMenu(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCvMenu(); });
+cvMenu.addEventListener('click', e => {
+  const item = e.target.closest('[data-cv], [data-cv-action]'); if (!item || item.disabled) return;
+  closeCvMenu();
+  if (item.dataset.cv) { if (item.dataset.cv !== book.current) switchCanvas(item.dataset.cv); return; }
+  const cur = currentCanvas();
+  switch (item.dataset.cvAction) {
+    case 'new': // starts with one blank mock of the same kind and look as the selected one
+      askText('Name the new canvas', `Canvas ${book.canvases.length + 1}`).then(name => {
+        if (!name) return;
+        const first = state.kind === 'email' ? blankEmailLike(state) : state.kind === 'slack' ? blankSlackLike(state) : blankTweetLike(state);
+        const c = wrapDoc({ mocks: [toMock({ ...first, x: 0, y: 0 })], selected: null, view: null }, name);
+        book.canvases.push(c); switchCanvas(c.id); toast(`Created “${name}”`);
+      });
+      break;
+    case 'rename':
+      askText('Rename canvas', cur.name).then(name => { if (!name) return; cur.name = name; updateCanvasMenu(); save(); });
+      break;
+    case 'dup': {
+      const c = wrapDoc(freshIds(structuredClone(cur.doc)), `${cur.name} copy`);
+      book.canvases.splice(book.canvases.indexOf(cur) + 1, 0, c); switchCanvas(c.id); toast(`Duplicated as “${c.name}”`);
+      break;
+    }
+    case 'del':
+      askConfirm(`Delete the canvas “${cur.name}” and its ${cur.doc.mocks.length} mock${cur.doc.mocks.length === 1 ? '' : 's'}?`).then(ok => {
+        if (!ok) return;
+        const i = book.canvases.indexOf(cur); book.canvases.splice(i, 1);
+        switchCanvas(book.canvases[Math.min(i, book.canvases.length - 1)].id); toast(`Deleted “${cur.name}”`);
+      });
+      break;
+    case 'open': openSavedFile(); break;
+    case 'reset': resetFile(); break;
+  }
+});
+function duplicateSelected() {
+  const sel = selectedMocks();
+  if (sel.length === 1) { // single copy goes to the right of everything
+    const copy = structuredClone(state);
+    copy.tweets?.forEach(t => t.id = uid());
+    copy.blocks?.forEach(b => b.id = uid());
+    return addMock({ ...copy, id: uid(), ...spotRightOf() });
+  }
+  addMocksToCanvas(sel); toast(`Duplicated ${sel.length} mocks`); // a group keeps its layout
+}
+function removeMocks(ids) {
+  const i = doc.mocks.indexOf(state);
+  doc.mocks = doc.mocks.filter(m => !ids.has(m.id));
+  selIds = new Set(); doc.selected = null;
+  selectMock(doc.mocks[Math.min(i, doc.mocks.length - 1)].id); renderCanvas(); save();
+}
+function deleteSelected() {
+  const sel = selectedMocks();
+  if (sel.length >= doc.mocks.length) return toast('The canvas needs at least one mock');
+  askConfirm(sel.length === 1 ? `Delete the mock “${mockLabel(sel[0])}”?` : `Delete ${sel.length} selected mocks?`).then(ok => {
+    if (ok) removeMocks(new Set(selIds));
+  });
+}
+
+/* Copy / cut / paste mocks. The selection goes on the system clipboard as JSON (so it works across
+   canvases, files and windows) and into this browser's storage as a fallback for browsers that
+   don't expose clipboard data. Text fields keep normal copy/paste. */
+const CLIP_KEY = 'tweet-mocker-clipboard';
+const canvasShortcuts = () => !typing() && $('#ask-modal').hidden && $('#copy-modal').hidden && !getSelection().toString();
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+function copySelection(e) {
+  const sel = selectedMocks(), payload = JSON.stringify({ mockerClipboard: 1, mocks: sel });
+  clipboardBlobs = new Set(payload.match(/blob:[^"\\]+/g) ?? []); // keep these alive for a paste
+  try { localStorage.setItem(CLIP_KEY, payload); } catch { /* too large for storage: the system clipboard still has it */ }
+  e.clipboardData?.setData('text/plain', payload);
+  e.preventDefault();
+  return sel.length;
+}
+function pasteMocks(mocks) { // centered in the current view, keeping the group's layout
+  const r = canvas.getBoundingClientRect();
+  const cx = (r.width / 2 - view.x) / view.zoom, cy = (r.height / 2 - view.y) / view.zoom;
+  const x0 = Math.min(...mocks.map(m => m.x || 0)), y0 = Math.min(...mocks.map(m => m.y || 0));
+  const added = mocks.map(m => toMock({ ...structuredClone(m), x: (m.x || 0) - x0, y: (m.y || 0) - y0 }));
+  freshIds({ mocks: added, selected: null });
+  doc.mocks.push(...added); renderCanvas();
+  let w = 0, h = 0; added.forEach(m => { const b = boardEl(m); w = Math.max(w, m.x + b.offsetWidth); h = Math.max(h, m.y + b.offsetHeight); });
+  let dx = Math.round(cx - w / 2), dy = Math.round(cy - h / 2);
+  while (doc.mocks.some(o => !added.includes(o) && o.x === added[0].x + dx && o.y === added[0].y + dy)) { dx += 40; dy += 40; } // don't stack exactly on top
+  added.forEach(m => { m.x += dx; m.y += dy; });
+  renderCanvas(); setSelection(added.map(m => m.id), added[0].id);
+  return added;
+}
+document.addEventListener('copy', e => { if (canvasShortcuts()) toast(`Copied ${plural(copySelection(e), 'mock')}`); });
+document.addEventListener('cut', e => {
+  if (!canvasShortcuts()) return;
+  const n = copySelection(e);
+  if (n >= doc.mocks.length) return toast(`Copied ${plural(n, 'mock')} (a canvas needs at least one, so nothing was removed)`);
+  removeMocks(new Set(selIds)); toast(`Cut ${plural(n, 'mock')}`);
+});
+document.addEventListener('paste', e => {
+  if (!canvasShortcuts()) return;
+  const text = e.clipboardData?.getData('text/plain') || '';
+  let p = null;
+  try { p = JSON.parse(text || localStorage.getItem(CLIP_KEY)); } catch {} // storage only when the clipboard gave us nothing
+  const mocks = (p?.mocks || []).filter(m => m && (m.tweets || m.blocks));
+  if (!mocks.length) return;
+  e.preventDefault();
+  pasteMocks(mocks); toast(`Pasted ${plural(mocks.length, 'mock')}`);
+});
+// Canvas shortcuts (ignored while typing): Delete/Backspace deletes, ⌘/Ctrl+A selects all, Esc keeps just the edited mock
+document.addEventListener('keydown', e => {
+  if (typing() || !$('#ask-modal').hidden) return;
+  if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); deleteSelected(); }
+  else if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'a') { e.preventDefault(); setSelection(doc.mocks.map(m => m.id), doc.selected); }
+  else if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'd') { e.preventDefault(); duplicateSelected(); }
+  else if (e.key === 'Escape' && selIds.size > 1) selectMock(doc.selected);
+});
+
+world.addEventListener('click', e => {
+  const b = e.target.closest('[data-mute]'); if (!b) return;
+  const v = b.closest('.mi').querySelector('video'); if (!v) return;
+  v.muted = !v.muted; b.innerHTML = v.muted ? IC.muted : IC.sound;
+});
+
+/* ---------------- Editor ---------------- */
+const seg = (path, opts) => `<div class="seg">${opts.map(([v, l]) =>
+  `<button data-action="set" data-path="${path}" data-value="${v}" class="${getPath(state, path) === v ? 'on' : ''}">${l}</button>`).join('')}</div>`;
+
+/* "More options" disclosures: everyday controls stay visible, fine-tuning is tucked away.
+   Which ones are open is a UI preference (kept across re-renders and reloads), not part of the mock. */
+const MORE_KEY = 'tweet-mocker-open-sections';
+const openMore = new Set((() => { try { return JSON.parse(localStorage.getItem(MORE_KEY)) || []; } catch { return []; } })());
+const more = (key, hint, inner) => `<details class="more" data-key="${esc(key)}" ${openMore.has(key) ? 'open' : ''}>
+  <summary>More options <span class="more-hint">${hint}</span></summary><div class="more-body">${inner}</div></details>`;
+
+/* Presets: reusable authors and appearance settings. Saved in this browser and shared by every
+   mock file (not stored inside a mock), so a preset saved in one file shows up in all of them. */
+const PRESETS_KEY = 'tweet-mocker-presets';
+const AUTHOR_KEYS = ['name', 'handle', 'avatar', 'verified', 'shape'];
+const STYLE_KEYS = ['theme', 'frame', 'width', 'showActions', 'grok', 'lineAbove'];
+// Preset kinds: tweet author, tweet appearance ("style", stored at the mock's top level), email sender, email brand
+const PRESET_KEYS = { author: AUTHOR_KEYS, style: STYLE_KEYS, sender: ['name', 'email', 'avatar'], brand: ['accent', 'text', 'bg', 'card', 'font', 'radius', 'logo', 'logoWidth'] };
+const PRESET_LABELS = { author: 'author', style: 'appearance', sender: 'sender', brand: 'brand' };
+const BUILTIN_PRESETS = {
+  author: [{ name: 'LM Studio', builtin: true, data: { name: 'LM Studio', handle: 'lmstudio', avatar: SAMPLE_AVATAR, verified: 'gold', shape: 'square' } }],
+  style: [{ name: 'X default', builtin: true, data: { theme: 'light', frame: 'plain', width: 598, showActions: true, grok: true, lineAbove: false } }],
+  sender: [{ name: 'LM Studio', builtin: true, data: { name: 'LM Studio', email: 'hello@lmstudio.ai', avatar: SAMPLE_AVATAR } }],
+  brand: [
+    { name: 'LM Studio', builtin: true, data: { accent: '#5b4ae6', text: '#18181b', bg: '#f4f4f5', card: '#ffffff', font: 'system', radius: 10, logo: SAMPLE_AVATAR, logoWidth: 44 } },
+    { name: 'Plain', builtin: true, data: { accent: '#111827', text: '#111827', bg: '#ffffff', card: '#ffffff', font: 'helvetica', radius: 4, logo: '', logoWidth: 120 } },
+  ],
+};
+const emptyPresets = () => ({ author: [], style: [], sender: [], brand: [] });
+let presets = (() => { try { return { ...emptyPresets(), ...JSON.parse(localStorage.getItem(PRESETS_KEY)) }; } catch { return emptyPresets(); } })();
+function savePresets() {
+  try { localStorage.setItem(PRESETS_KEY, JSON.stringify(presets)); return true; }
+  catch { toast('Couldn’t save preset: browser storage is full (try a smaller avatar image)'); return false; }
+}
+const presetList = kind => [...BUILTIN_PRESETS[kind], ...presets[kind]];
+const pickKeys = (kind, o) => Object.fromEntries(PRESET_KEYS[kind].map(k => [k, o?.[k] ?? null]));
+const currentPresetValue = (kind, target) => pickKeys(kind, kind === 'style' ? state : getPath(state, target));
+function matchingPreset(kind, target) {
+  const cur = JSON.stringify(currentPresetValue(kind, target));
+  return presetList(kind).findIndex(p => JSON.stringify(pickKeys(kind, p.data)) === cur);
+}
+function presetBar(kind, target) {
+  const list = presetList(kind), m = matchingPreset(kind, target), userIdx = m - BUILTIN_PRESETS[kind].length;
+  return `<div class="preset-bar" data-bar="${kind}|${target}">
+    <select data-preset="${kind}" data-target="${target}" title="Apply a saved preset">
+      ${m < 0 ? '<option value="" selected>Preset: custom (not saved)</option>' : ''}
+      ${list.map((p, i) => `<option value="${i}" ${i === m ? 'selected' : ''}>Preset: ${esc(p.name)}${p.builtin ? ' (built-in)' : ''}</option>`).join('')}
+    </select>
+    <button class="btn sm" data-action="preset-save" data-kind="${kind}" data-target="${target}">Save as preset</button>
+    ${m >= 0 && userIdx >= 0 ? `<button class="ib danger" title="Delete this preset" data-action="preset-del" data-kind="${kind}" data-idx="${userIdx}">🗑</button>` : ''}
+  </div>`;
+}
+// Keep the preset pickers in step while typing, without re-rendering the inputs being edited
+const syncPresetBars = () => document.querySelectorAll('#editor [data-bar]').forEach(el => {
+  const [kind, target] = el.dataset.bar.split('|'); el.outerHTML = presetBar(kind, target);
+});
+
+function authorFields(prefix, a, key) {
+  const avUrl = a.avatar && !a.avatar.startsWith('data:') ? a.avatar : '';
+  return `
+  <div class="row2">
+    <div><label class="lbl">Display name</label><input data-path="${prefix}.name" value="${esc(a.name)}" placeholder="Name"></div>
+    <div><label class="lbl">Handle</label><div class="at"><span>@</span><input data-path="${prefix}.handle" value="${esc(a.handle)}" placeholder="handle"></div></div>
+  </div>
+  <label class="lbl">Avatar</label>
+  <div class="row-av">
+    ${avatarHTML(resolveAuthor(a), 'av-thumb')}
+    <div class="grow flex">
+      <button class="btn" data-action="pick" data-kind="image" data-target="${prefix}.avatar">Upload</button>
+      <input class="grow" style="width:auto" data-path="${prefix}.avatar" data-rerender-blur value="${esc(avUrl)}" placeholder="…or image URL">
+      ${a.avatar ? `<button class="ib danger" title="Remove avatar" data-action="clear" data-target="${prefix}.avatar">✕</button>`
+        : `<button class="btn" title="Use the LM Studio logo" data-action="lm-logo" data-target="${prefix}.avatar">LM Studio logo</button>`}
+    </div>
+  </div>
+  ${more(key, 'verified badge, avatar shape', `<div class="row2">
+    <div><label class="lbl">Verified badge</label>
+    <select data-path="${prefix}.verified">
+      ${[['none', 'None'], ['blue', 'Blue'], ['gold', 'Gold (org)'], ['gray', 'Gray (gov)']]
+        .map(([v, l]) => `<option value="${v}" ${a.verified === v ? 'selected' : ''}>${l}</option>`).join('')}
+    </select></div>
+    <div><label class="lbl">Avatar shape</label>
+    <select data-path="${prefix}.shape" data-rerender>
+      <option value="circle" ${a.shape !== 'square' ? 'selected' : ''}>Circle (person)</option>
+      <option value="square" ${a.shape === 'square' ? 'selected' : ''}>Square (org)</option>
+    </select></div>
+  </div>`)}`;
+}
+
+const charCount = text => tweetLength(text);
+function counterHTML(t) {
+  const c = charCount(t.text), lines = t.text.trimEnd().split('\n').length;
+  const note = c > POST_LIMIT ? ' · long post (Premium): the timeline cuts it with “Show more”'
+    : lines > DESKTOP_LINE_LIMIT ? ` · ${lines} lines: the desktop timeline cuts it with “Show more”` : '';
+  return `${c} / ${POST_LIMIT}${note}`;
+}
+
+function tweetCard(t, i) {
+  t.card ??= blankCard(); // older saved mocks have no card settings
+  const n = state.tweets.length, p = `tweets.${i}`;
+  return `<section class="card tcard" data-i="${i}" data-tid="${esc(t.id)}">
+    <div class="tc-h"><b>${n > 1 ? `Tweet ${i + 1}` : 'Tweet'}</b>${state.focus === i + 1 ? '<span style="font-size:11px;color:var(--ui-accent);margin-left:6px;font-weight:600">FOCUSED</span>' : ''}<span class="sp"></span>
+      <button class="ib" title="Move up" data-action="up" data-i="${i}" ${i === 0 ? 'disabled' : ''}>↑</button>
+      <button class="ib" title="Move down" data-action="down" data-i="${i}" ${i === n - 1 ? 'disabled' : ''}>↓</button>
+      <button class="ib" title="Duplicate" data-action="dup" data-i="${i}">⧉</button>
+      <button class="ib danger" title="Delete" data-action="del" data-i="${i}" ${n === 1 ? 'disabled' : ''}>✕</button>
+    </div>
+    <textarea data-path="${p}.text" rows="4" placeholder="What's happening?">${esc(t.text)}</textarea>
+    <div class="counter ${charCount(t.text) > 280 ? 'over' : ''}" id="cnt-${i}">${counterHTML(t)}</div>
+    ${t.media.length ? `<div class="media-list">${t.media.map((m, j) => `<div class="mthumb">
+      ${m.type === 'video' ? `<video src="${esc(m.src)}" muted preload="metadata"></video><span class="tag">VIDEO</span>` : `<img src="${esc(m.src)}" alt="">`}
+      <button class="x" data-action="rm-media" data-i="${i}" data-j="${j}">✕</button></div>`).join('')}</div>
+    ${t.media.map((m, j) => `<div class="mrow"><span style="min-width:52px">${m.type === 'video' ? 'Video' : 'Image'} ${j + 1}</span>
+      ${m.type === 'image' ? `<label class="chk"><input type="checkbox" data-path="${p}.media.${j}.asVideo" data-rerender ${m.asVideo ? 'checked' : ''}> Show as video</label>` : ''}
+      ${m.type === 'video' || m.asVideo ? `<span>Length</span><input class="dur-in" data-path="${p}.media.${j}.duration" value="${esc(m.duration || '')}" placeholder="${m.type === 'video' ? 'auto' : '0:34'}">` : ''}
+    </div>`).join('')}` : ''}
+    <div class="flex" style="margin-top:8px">
+      <button class="btn" data-action="pick" data-kind="media" data-i="${i}" ${t.media.length >= 4 ? 'disabled' : ''}>＋ Image / video</button>
+      <button class="btn" data-action="media-url" data-i="${i}" ${t.media.length >= 4 ? 'disabled' : ''}>Media URL</button>
+    </div>
+    <div class="hint">Or drag & drop / paste files here · up to 4 per tweet</div>
+    ${more(`tweet-${t.id}`, 'time, stats, link card, author', `
+    <label class="lbl" style="margin-top:4px">Posted at</label>
+    <input type="datetime-local" data-path="${p}.time" value="${esc(t.time)}">
+    <div class="row5">
+      ${[['replies', 'Replies'], ['reposts', 'Reposts'], ['likes', 'Likes'], ['views', 'Views'], ['bookmarks', 'Saves']].map(([k, l]) =>
+        `<div><label class="lbl">${l}</label><input data-path="${p}.${k}" value="${esc(t[k])}" placeholder="0"></div>`).join('')}
+    </div>
+    <div class="flex" style="gap:14px">
+      <label class="chk"><input type="checkbox" data-path="${p}.liked" ${t.liked ? 'checked' : ''}> Liked</label>
+      <label class="chk"><input type="checkbox" data-path="${p}.reposted" ${t.reposted ? 'checked' : ''}> Reposted</label>
+      <label class="chk"><input type="checkbox" data-path="${p}.bookmarked" ${t.bookmarked ? 'checked' : ''}> Bookmarked</label>
+    </div>
+    <label class="lbl">Link preview card</label>
+    <label class="chk" style="margin-top:0"><input type="checkbox" data-path="${p}.card.on" data-rerender ${t.card.on ? 'checked' : ''}> Show a card when the post ends with a link (no media)</label>
+    ${t.card.on ? `<div class="row2">
+      <div><label class="lbl">Card title</label><input data-path="${p}.card.title" value="${esc(t.card.title)}" placeholder="Page title"></div>
+      <div><label class="lbl">Domain</label><input data-path="${p}.card.domain" value="${esc(t.card.domain)}" placeholder="auto from link"></div>
+    </div>
+    <label class="lbl">Card image (1.91:1, e.g. the page's og:image)</label>
+    <div class="flex">
+      ${t.card.image ? `<img src="${esc(t.card.image)}" style="width:76px;height:40px;object-fit:cover;border-radius:6px" alt="">` : ''}
+      <button class="btn" data-action="pick" data-kind="image" data-target="${p}.card.image">Upload</button>
+      <input class="grow" style="width:auto" data-path="${p}.card.image" data-rerender-blur value="${esc(t.card.image.startsWith('data:') ? '' : t.card.image)}" placeholder="…or image URL">
+      ${t.card.image ? `<button class="ib danger" title="Remove card image" data-action="clear" data-target="${p}.card.image">✕</button>` : ''}
+    </div>` : ''}
+    <label class="lbl">Author</label>
+    <label class="chk" style="margin-top:0"><input type="checkbox" data-path="${p}.customAuthor" data-rerender ${t.customAuthor ? 'checked' : ''}> Different author (e.g. a reply)</label>
+    ${t.customAuthor ? `<div class="sub">${presetBar('author', `${p}.author`)}${authorFields(`${p}.author`, t.author, `author-${t.id}`)}</div>` : ''}`)}
+  </section>`;
+}
+
+function renderEditor() {
+  if (state.kind === 'email') renderEmailEditor(); else if (state.kind === 'slack') renderSlackEditor(); else renderTweetEditor();
+  // The selected mock's own actions sit on top of its panel, not in the toolbar
+  $('#editor').insertAdjacentHTML('afterbegin', `<div class="obj-bar"><b>${esc(mockLabel(state))}</b><span class="grow"></span>
+    <button class="btn sm" data-action="obj-dup" title="Duplicate this mock (⌘D)">Duplicate</button>
+    <button class="btn sm" data-action="obj-copy" title="Copy this mock as an image">Copy image</button>
+    <button class="btn sm danger" data-action="obj-del" title="Delete this mock (Delete)">Delete</button></div>`);
+  if (selIds.size > 1) $('#editor').insertAdjacentHTML('afterbegin', `<div class="multi-note"><span class="grow"><b>${selIds.size} mocks selected</b> · editing “${esc(mockLabel(state))}”</span>
+    <button class="btn" data-action="sel-one">Select only this</button></div>`);
+}
+function renderTweetEditor() {
+  const s = state, ed = $('#editor'), scroll = ed.scrollTop;
+  ed.innerHTML = `
+    <section class="card"><h3>Author</h3>${presetBar('author', 'author')}${authorFields('author', s.author, 'author')}</section>
+    <section class="card"><h3>Appearance</h3>${presetBar('style', 'style')}
+      <label class="lbl" style="margin-top:0">Theme</label>${seg('theme', [['light', 'Light'], ['dim', 'Dim'], ['dark', 'Lights out']])}
+      <label class="lbl">Device</label>${seg('device', [['desktop', 'Desktop'], ['mobile', 'Mobile (390 px)']])}
+      <label class="lbl">Focused tweet (opened / detail view)</label>
+      <select data-path="focus" data-num data-rerender>
+        <option value="0" ${!s.focus ? 'selected' : ''}>None — plain timeline thread</option>
+        ${s.tweets.map((_, i) => `<option value="${i + 1}" ${s.focus === i + 1 ? 'selected' : ''}>Tweet ${i + 1}${i ? ' (tweets above lead into it)' : ''}</option>`).join('')}
+      </select>
+      ${more('appearance', 'export style, width, icons', `
+      <label class="lbl" style="margin-top:4px">Export style</label>${seg('frame', [['plain', 'Plain'], ['card', 'Card on gradient']])}
+      <label class="lbl">Width · <span id="wv">${s.width}px</span></label>
+      <input type="range" min="320" max="720" step="1" data-path="width" data-num value="${s.width}">
+      <label class="chk"><input type="checkbox" data-path="showActions" ${s.showActions ? 'checked' : ''}> Show action bar (replies, likes…)</label>
+      <label class="chk"><input type="checkbox" data-path="grok" ${s.grok ? 'checked' : ''}> Show Grok icon</label>
+      <label class="chk"><input type="checkbox" data-path="lineAbove" ${s.lineAbove ? 'checked' : ''}> Thread line above first tweet (cropped from a longer thread)</label>
+      <label class="chk"><input type="checkbox" data-path="fullText" ${s.fullText ? 'checked' : ''}> Show long posts in full (no “Show more”)</label>
+      <div class="hint">Timeline posts are cut like X: past 280 characters, or after 10 lines on desktop. The focused tweet always shows in full, like an opened post.</div>`)}
+    </section>
+    <div class="thread-h"><h3>${s.tweets.length > 1 ? `Thread · ${s.tweets.length} tweets` : 'Tweet'}</h3></div>
+    ${s.tweets.map(tweetCard).join('')}
+    <button class="btn add" data-action="add">＋ Add tweet to thread</button>`;
+  ed.scrollTop = scroll;
+}
+
+/* ---------------- Email editor ---------------- */
+const slug = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'mock';
+const fileBase = (m = state) => m.kind === 'email' ? 'email-' + slug(m.subject)
+  : m.kind === 'slack' ? 'slack-' + slug(slackEmoji((m.text || '').split('\n')[0]).replace(/[*_~]/g, '')) : 'tweet-' + slug(m.author?.handle);
+const persistOpen = () => { try { localStorage.setItem(MORE_KEY, JSON.stringify([...openMore])); } catch {} };
+const fText = (label, path, val, ph = '') => `<label class="lbl">${label}</label><input data-path="${path}" value="${esc(val)}" placeholder="${esc(ph)}">`;
+const fArea = (label, path, val, rows = 3, ph = '') => `<label class="lbl">${label}</label><textarea class="sm" data-path="${path}" rows="${rows}" placeholder="${esc(ph)}">${esc(val)}</textarea>`;
+const fCheck = (label, path, on, rerender = false) => `<label class="chk"><input type="checkbox" data-path="${path}" ${rerender ? 'data-rerender' : ''} ${on ? 'checked' : ''}> ${label}</label>`;
+const fColor = (label, path, val) => `<div><label class="lbl">${label}</label><input type="color" data-path="${path}" value="${esc(val)}"></div>`;
+const fImage = (label, path, val = '') => `<label class="lbl">${label}</label><div class="flex">
+  ${val ? `<img class="thumb" src="${esc(val)}" alt="">` : ''}
+  <button class="btn" data-action="pick" data-kind="image" data-target="${path}">Upload</button>
+  <input class="grow" style="width:auto" data-path="${path}" data-rerender-blur value="${esc(val.startsWith('data:') ? '' : val)}" placeholder="…or image URL">
+  ${val ? `<button class="ib danger" title="Remove image" data-action="clear" data-target="${path}">✕</button>` : ''}</div>`;
+const alignSeg = path => `<label class="lbl">Alignment</label>${seg(path, [['left', 'Left'], ['center', 'Center']])}`;
+const FORMAT_HINT = '<div class="hint">Formatting: **bold**, [link text](https://…), and {{first_name}}-style placeholders from sample data.</div>';
+function blockSnippet(bk) {
+  const t = bk.text ?? bk.label ?? bk.title ?? bk.items ?? bk.alt ?? (bk.cols ? bk.cols.map(c => c.title).join(' / ') : '');
+  return String(t || '').split('\n').find(s => s.trim()) || '';
+}
+function blockFields(bk, p) {
+  switch (bk.type) {
+    case 'logo': return `${alignSeg(p + '.align')}<div class="hint">Uses the logo set under Brand → More options, or the sender name if there's no logo.</div>`;
+    case 'heading': return `<div class="row2"><div><label class="lbl">Size</label><select data-path="${p}.level" data-num>
+        ${[[1, 'Large (H1)'], [2, 'Medium (H2)'], [3, 'Small (H3)']].map(([v, l]) => `<option value="${v}" ${+bk.level === v ? 'selected' : ''}>${l}</option>`).join('')}</select></div>
+      <div>${alignSeg(p + '.align')}</div></div>${fArea('Text', p + '.text', bk.text, 2)}`;
+    case 'paragraph': return `${fArea('Text', p + '.text', bk.text, 5)}${FORMAT_HINT}${alignSeg(p + '.align')}`;
+    case 'button': return `<div class="row2"><div>${fText('Label', p + '.label', bk.label)}</div><div>${fText('Link', p + '.url', bk.url, 'https://')}</div></div>
+      ${alignSeg(p + '.align')}${fCheck('Full width', p + '.full', bk.full)}`;
+    case 'image': return `${fImage('Image', p + '.src', bk.src)}${fText('Alt text', p + '.alt', bk.alt, 'Describe the image (shown when images are blocked)')}`;
+    case 'columns': return bk.cols.map((c, j) => `<div class="sub" style="margin-top:10px"><b style="font-size:13px">Column ${j + 1}</b>
+      ${fImage('Image (optional)', `${p}.cols.${j}.src`, c.src)}${fText('Title', `${p}.cols.${j}.title`, c.title)}${fArea('Text', `${p}.cols.${j}.text`, c.text, 2)}</div>`).join('');
+    case 'list': return `${fArea('Items (one per line)', p + '.items', bk.items, 5)}${fCheck('Numbered list', p + '.ordered', bk.ordered)}`;
+    case 'box': return `${fText('Title (optional)', p + '.title', bk.title)}${fArea('Text', p + '.text', bk.text, 3)}<div class="hint">Tinted with the brand accent color.</div>`;
+    case 'divider': return '<div class="hint">A thin line between sections.</div>';
+    case 'spacer': return `<label class="lbl">Height</label><input type="range" min="8" max="96" step="4" data-path="${p}.size" data-num value="${+bk.size || 24}">`;
+    case 'footer': return `${fArea('Text', p + '.text', bk.text, 2)}${fCheck('Show “Unsubscribe · View in browser” links', p + '.links', bk.links)}`;
+  }
+  return '';
+}
+function blockCard(bk, i) {
+  const n = state.blocks.length, key = 'blk-' + bk.id;
+  return `<details class="card blk" data-key="${esc(key)}" data-bid="${esc(bk.id)}" ${openMore.has(key) ? 'open' : ''}>
+    <summary><span class="blk-type">${BLOCK_TYPES[bk.type]?.name || bk.type}</span><span class="blk-snip">${esc(blockSnippet(bk))}</span>
+      <button class="ib" title="Move up" data-action="blk-up" data-i="${i}" ${i === 0 ? 'disabled' : ''}>↑</button>
+      <button class="ib" title="Move down" data-action="blk-down" data-i="${i}" ${i === n - 1 ? 'disabled' : ''}>↓</button>
+      <button class="ib" title="Duplicate" data-action="blk-dup" data-i="${i}">⧉</button>
+      <button class="ib danger" title="Delete" data-action="blk-del" data-i="${i}">✕</button></summary>
+    <div class="blk-body">${blockFields(bk, `blocks.${i}`)}</div></details>`;
+}
+function renderEmailEditor() {
+  const m = state, ed = $('#editor'), scroll = ed.scrollTop, s = m.sender, b = m.brand;
+  ed.innerHTML = `
+    <section class="card"><h3>Sender</h3>${presetBar('sender', 'sender')}
+      <div class="row2"><div>${fText('Name', 'sender.name', s.name, 'Company')}</div><div>${fText('Email address', 'sender.email', s.email, 'hello@company.com')}</div></div>
+      <label class="lbl">Avatar</label>
+      <div class="row-av">${avatarHTML({ name: s.name || s.email || '?', avatar: s.avatar, shape: 'circle' }, 'av-thumb')}
+        <div class="grow flex"><button class="btn" data-action="pick" data-kind="image" data-target="sender.avatar">Upload</button>
+          <input class="grow" style="width:auto" data-path="sender.avatar" data-rerender-blur value="${esc(s.avatar && !s.avatar.startsWith('data:') ? s.avatar : '')}" placeholder="…or image URL">
+          ${s.avatar ? '<button class="ib danger" title="Remove avatar" data-action="clear" data-target="sender.avatar">✕</button>'
+            : '<button class="btn" data-action="lm-logo" data-target="sender.avatar">LM Studio logo</button>'}</div></div>
+    </section>
+    <section class="card"><h3>Envelope</h3>
+      ${fText('Subject', 'subject', m.subject)}
+      ${fText('Preview text', 'preheader', m.preheader, 'Shown after the subject in the inbox')}
+      ${more('env-' + m.id, 'to, time, canvas label', `${fText('Label on the canvas', 'name', m.name || '', 'Defaults to the subject, e.g. “Short · Mobile”')}${fText('To', 'to', m.to, 'me')}<label class="lbl">Sent at</label><input type="datetime-local" data-path="time" value="${esc(m.time)}">`)}
+    </section>
+    <section class="card"><h3>View</h3>
+      <label class="lbl" style="margin-top:0">Show as</label>${seg('view', [['open', 'Opened email'], ['inbox', 'Inbox']])}
+      <div class="row2"><div><label class="lbl">Device</label>${seg('device', [['desktop', 'Desktop'], ['mobile', 'Mobile']])}</div>
+        <div><label class="lbl">Mode</label>${seg('scheme', [['light', 'Light'], ['dark', 'Dark']])}</div></div>
+      ${more('emview-' + m.id, 'blocked images, client header, sample data', `
+        ${fCheck('Preview with images blocked', 'blockImages', m.blockImages)}
+        ${fCheck('Show the email client header (subject, sender)', 'showClient', m.showClient !== false)}
+        ${fArea('Sample data', 'sample', m.sample, 3, 'first_name: Alex')}
+        <div class="hint">One per line, like <code>first_name: Alex</code>. Use it as {{first_name}} in the subject, preview text or any block.</div>`)}
+    </section>
+    <section class="card"><h3>Brand</h3>${presetBar('brand', 'brand')}
+      <div class="row4c">${fColor('Accent', 'brand.accent', b.accent)}${fColor('Text', 'brand.text', b.text)}${fColor('Background', 'brand.bg', b.bg)}${fColor('Card', 'brand.card', b.card)}</div>
+      <div class="row2"><div><label class="lbl">Font</label><select data-path="brand.font">
+          ${Object.entries(FONTS).map(([k, f]) => `<option value="${k}" ${b.font === k ? 'selected' : ''}>${f.name}</option>`).join('')}</select></div>
+        <div><label class="lbl">Corner radius</label><input type="range" min="0" max="24" data-path="brand.radius" data-num value="${+b.radius || 0}"></div></div>
+      ${more('brand-' + m.id, 'logo', `${fImage('Logo', 'brand.logo', b.logo)}
+        <label class="lbl">Logo width</label><input type="range" min="24" max="240" data-path="brand.logoWidth" data-num value="${+b.logoWidth || 44}">`)}
+    </section>
+    <div class="thread-h"><h3>Content · ${m.blocks.length} block${m.blocks.length === 1 ? '' : 's'}</h3></div>
+    ${m.blocks.map(blockCard).join('')}
+    <div class="flex add-blk"><select id="blk-type" style="width:auto;flex:1">${Object.entries(BLOCK_TYPES).map(([k, t]) => `<option value="${k}">${t.name}</option>`).join('')}</select>
+      <button class="btn" data-action="blk-add">＋ Add block</button></div>`;
+  ed.scrollTop = scroll;
+}
+/* ---------------- Slack editor ---------------- */
+function renderSlackEditor() {
+  const m = state, ed = $('#editor'), scroll = ed.scrollTop, a = m.author;
+  ed.innerHTML = `
+    <section class="card"><h3>Message</h3>
+      <textarea class="sl-src" data-path="text" rows="16" spellcheck="true">${esc(m.text)}</textarea>
+      <div class="hint">Type it like Slack: *bold*, _italic_, ~strike~, \`code\`, :rocket: emoji. Start a line with “- ” for a real bullet and indent two spaces per level to nest. A typed “•” stays plain text (good for group labels).</div>
+      <button class="btn primary" data-action="slack-copy" style="margin-top:10px;width:100%">Copy for Slack</button>
+      <div class="hint">Copies rich text: press ⌘V in Slack and the bold, italics and bullets come through. @-mentions paste as plain text, so pick each person again from Slack’s list.</div>
+    </section>
+    <section class="card"><h3>Author</h3>
+      ${fText('Display name', 'author.name', a.name, 'mori')}
+      <label class="lbl">Avatar</label>
+      <div class="row-av">${avatarHTML({ name: a.name || '?', avatar: a.avatar, shape: 'square' }, 'av-thumb')}
+        <div class="grow flex"><button class="btn" data-action="pick" data-kind="image" data-target="author.avatar">Upload</button>
+          <input class="grow" style="width:auto" data-path="author.avatar" data-rerender-blur value="${esc(a.avatar && !a.avatar.startsWith('data:') ? a.avatar : '')}" placeholder="…or image URL">
+          ${a.avatar ? '<button class="ib danger" title="Remove avatar" data-action="clear" data-target="author.avatar">✕</button>' : ''}</div></div>
+    </section>
+    <section class="card"><h3>Appearance</h3>
+      <label class="lbl" style="margin-top:0">Theme</label>${seg('theme', [['dark', 'Dark'], ['light', 'Light']])}
+      ${more('slack-' + m.id, '@-mentions, reactions, time, width', `
+        ${fText('People to highlight as @-mentions (comma-separated)', 'people', m.people, 'Alex Zisis, Miguel')}
+        <div class="hint">List multi-word names so the whole name highlights. The author’s own name shows in yellow, like in Slack.</div>
+        ${fText('Reactions', 'reactions', m.reactions, ':rocket: 3, :ship: 2')}
+        <label class="lbl">Sent at</label><input type="datetime-local" data-path="time" value="${esc(m.time)}">
+        ${fCheck('Show “(edited)”', 'edited', m.edited)}
+        <label class="lbl">Width</label><input type="range" min="360" max="900" step="10" data-path="width" data-num value="${+m.width || 640}">
+        ${fText('Label on the canvas', 'name', m.name || '', 'Defaults to the first line')}`)}
+    </section>`;
+  ed.scrollTop = scroll;
+}
+function revealBlock(bid) { // clicking a block on the canvas opens and jumps to its settings
+  const d = $('#editor').querySelector(`details.blk[data-bid="${CSS.escape(bid)}"]`); if (!d) return;
+  d.open = true;
+  d.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  d.classList.remove('flash'); void d.offsetWidth; d.classList.add('flash');
+}
+
+function refresh(editorToo = true) { if (editorToo) renderEditor(); renderMock(state); save(); }
+
+const readDataURL = f => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(f); });
+
+// Reading a file is async, so the user may switch mocks or canvases before it finishes. Uploads
+// write to the mock that started them, and redraw it only if it's still on the open canvas.
+function finishUpload(owner) {
+  if (owner === state) return refresh();
+  if (doc.mocks.includes(owner)) renderMock(owner);
+  save();
+}
+// `t` is the tweet object itself, not its index, so reordering tweets mid-read can't misdirect the files
+async function addFiles(t, files, owner = state) {
+  let skipped = 0;
+  for (const f of files) {
+    if (t.media.length >= 4) { skipped++; continue; }
+    if (f.type.startsWith('video/')) t.media.push({ type: 'video', src: URL.createObjectURL(f) });
+    else if (f.type.startsWith('image/')) t.media.push({ type: 'image', src: await readDataURL(f) });
+  }
+  if (skipped) toast('Max 4 media items per tweet');
+  finishUpload(owner);
+}
+
+function pick(kind, target, i) {
+  // Resolve the destination now: paths like blocks.3.src hold indexes that can shift while the file is read
+  const owner = state, tweet = owner.tweets?.[i];
+  const parentPath = target?.split('.').slice(0, -1).join('.'), key = target?.split('.').at(-1);
+  const parent = kind === 'media' ? null : (parentPath ? getPath(owner, parentPath) : owner);
+  const inp = document.createElement('input');
+  inp.type = 'file';
+  inp.accept = kind === 'media' ? 'image/*,video/*' : 'image/*';
+  inp.multiple = kind === 'media';
+  inp.onchange = async () => {
+    if (!inp.files.length) return;
+    if (kind === 'media') return addFiles(tweet, inp.files, owner);
+    parent[key] = await readDataURL(inp.files[0]); finishUpload(owner);
+  };
+  inp.click();
+}
+
+const ed = $('#editor');
+ed.addEventListener('input', e => {
+  const el = e.target, p = el.dataset.path; if (!p) return;
+  let v = el.type === 'checkbox' ? el.checked : el.value;
+  if ('num' in el.dataset) v = +v;
+  setPath(state, p, v);
+  if (p === 'width' && $('#wv')) $('#wv').textContent = v + 'px';
+  const m = p.match(/^tweets\.(\d+)\.text$/);
+  if (m) { const c = $('#cnt-' + m[1]), t = state.tweets[+m[1]]; c.textContent = counterHTML(t); c.classList.toggle('over', charCount(t.text) > 280); }
+  if ('rerender' in el.dataset) return refresh();
+  refresh(false);
+  syncPresetBars();
+});
+ed.addEventListener('change', e => {
+  const sel = e.target.closest?.('select[data-preset]'); if (!sel || sel.value === '') return;
+  const kind = sel.dataset.preset, p = presetList(kind)[+sel.value]; if (!p) return;
+  const data = structuredClone(p.data);
+  if (kind === 'style') Object.assign(state, data);
+  else setPath(state, sel.dataset.target, { ...getPath(state, sel.dataset.target), ...data });
+  refresh(); toast(`Applied preset “${p.name}”`);
+});
+// <details> toggle events don't bubble, so listen in the capture phase
+ed.addEventListener('toggle', e => {
+  const d = e.target; if (!d.matches?.('details.more, details.blk')) return;
+  d.open ? openMore.add(d.dataset.key) : openMore.delete(d.dataset.key);
+  persistOpen();
+}, true);
+ed.addEventListener('change', e => { if ('rerenderBlur' in e.target.dataset) renderEditor(); });
+ed.addEventListener('click', e => {
+  const b = e.target.closest('[data-action]'); if (!b || b.disabled) return;
+  if (b.closest('summary')) e.preventDefault(); // buttons in a block's header shouldn't also open/close it
+  const a = b.dataset.action, i = +b.dataset.i, T = state.tweets, B = state.blocks;
+  switch (a) {
+    case 'sel-one': selectMock(doc.selected); return;
+    case 'obj-dup': duplicateSelected(); return;
+    case 'obj-copy': copySelectedImage(); return;
+    case 'slack-copy': copyForSlack(); return;
+    case 'obj-del': deleteSelected(); return;
+    case 'blk-add': {
+      const nb = blk($('#blk-type').value); B.push(nb); openMore.add('blk-' + nb.id); persistOpen();
+      refresh(); revealBlock(nb.id); return;
+    }
+    case 'blk-up': [B[i - 1], B[i]] = [B[i], B[i - 1]]; break;
+    case 'blk-down': [B[i + 1], B[i]] = [B[i], B[i + 1]]; break;
+    case 'blk-dup': B.splice(i + 1, 0, { ...structuredClone(B[i]), id: uid() }); break;
+    case 'blk-del': B.splice(i, 1); break;
+    case 'set': setPath(state, b.dataset.path, b.dataset.value); break;
+    case 'add': {
+      const last = T.at(-1);
+      T.push(newTweet({ time: last?.time || nowLocal() }));
+      refresh();
+      const cards = ed.querySelectorAll('.tcard'); const c = cards[cards.length - 1];
+      c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.querySelector('textarea').focus();
+      return;
+    }
+    case 'del':
+      if (T.length > 1) T.splice(i, 1);
+      if (state.focus === i + 1) state.focus = 0; else if (state.focus > i + 1) state.focus--;
+      break;
+    case 'up': [T[i - 1], T[i]] = [T[i], T[i - 1]]; if (state.focus === i + 1) state.focus--; else if (state.focus === i) state.focus++; break;
+    case 'down': [T[i + 1], T[i]] = [T[i], T[i + 1]]; if (state.focus === i + 1) state.focus++; else if (state.focus === i + 2) state.focus--; break;
+    case 'dup': T.splice(i + 1, 0, { ...structuredClone(T[i]), id: uid() }); if (state.focus > i + 1) state.focus++; break;
+    case 'pick': return pick(b.dataset.kind, b.dataset.target, i);
+    case 'clear': setPath(state, b.dataset.target, ''); break;
+    case 'preset-save': {
+      const kind = b.dataset.kind, target = b.dataset.target;
+      const suggested = kind === 'author' || kind === 'sender' ? (getPath(state, target).name || 'Untitled')
+        : kind === 'brand' ? `${state.sender?.name || 'My'} brand` : 'My style';
+      askText(`Name this ${PRESET_LABELS[kind]} preset`, suggested).then(name => {
+        if (!name) return;
+        if (BUILTIN_PRESETS[kind].some(p => p.name === name)) return toast('That name is used by a built-in preset');
+        const data = structuredClone(currentPresetValue(kind, target)), list = presets[kind];
+        const existing = list.findIndex(p => p.name === name);
+        if (existing >= 0) list[existing].data = data; // same name = update that preset
+        else list.push({ name, data });
+        if (savePresets()) toast(existing >= 0 ? `Updated preset “${name}”` : `Saved preset “${name}”`);
+        refresh();
+      });
+      return;
+    }
+    case 'preset-del': {
+      const kind = b.dataset.kind, idx = +b.dataset.idx, p = presets[kind][idx]; if (!p) return;
+      askConfirm(`Delete the preset “${p.name}”?`).then(ok => {
+        if (!ok) return;
+        presets[kind].splice(idx, 1); savePresets(); toast(`Deleted preset “${p.name}”`); refresh();
+      });
+      return;
+    }
+    case 'lm-logo': // restore the built-in LM Studio logo (org accounts use square avatars)
+      setPath(state, b.dataset.target, SAMPLE_AVATAR);
+      setPath(state, b.dataset.target.replace(/avatar$/, 'shape'), 'square');
+      break;
+    case 'rm-media': T[i].media.splice(+b.dataset.j, 1); break;
+    case 'media-url': {
+      askText('Image or video URL').then(url => {
+        if (!url) return;
+        // Guess the type from the extension; anything else is treated as an image ("Show as video" can restyle it)
+        T[i].media.push({ type: /\.(mp4|webm|mov|m4v|ogv)(\?|#|$)/i.test(url) ? 'video' : 'image', src: url });
+        refresh();
+      });
+      return;
+    }
+  }
+  refresh();
+});
+// Drag & drop + paste onto tweet cards
+ed.addEventListener('dragover', e => { const c = e.target.closest('.tcard'); if (!c) return; e.preventDefault(); ed.querySelectorAll('.drag').forEach(x => x !== c && x.classList.remove('drag')); c.classList.add('drag'); });
+ed.addEventListener('dragleave', e => { const c = e.target.closest('.tcard'); if (c && !c.contains(e.relatedTarget)) c.classList.remove('drag'); });
+ed.addEventListener('drop', e => { const c = e.target.closest('.tcard'); if (!c) return; e.preventDefault(); c.classList.remove('drag'); if (e.dataTransfer.files.length) addFiles(state.tweets[+c.dataset.i], e.dataTransfer.files); });
+ed.addEventListener('paste', e => {
+  const c = e.target.closest('.tcard'); if (!c) return;
+  const files = [...e.clipboardData.files].filter(f => /^(image|video)\//.test(f.type));
+  if (files.length) { e.preventDefault(); addFiles(state.tweets[+c.dataset.i], files); }
+});
+
+/* ---------------- Export ---------------- */
+async function captureBlob(m = state) {
+  if (typeof htmlToImage === 'undefined') throw new Error('Export library is missing from this file');
+  const node = boardEl(m).querySelector('.capture'), swaps = [];
+  // Freeze each video's current frame into an <img> so it shows up in the PNG
+  node.querySelectorAll('video').forEach(v => {
+    try {
+      const c = document.createElement('canvas');
+      c.width = v.videoWidth || 640; c.height = v.videoHeight || 360;
+      c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
+      const img = new Image(); img.src = c.toDataURL('image/png');
+      if (v.closest('.m1')) img.style.cssText = 'width:100%;max-height:510px;object-fit:contain;background:#000;display:block';
+      v.replaceWith(img); swaps.push([img, v]);
+    } catch { /* cross-origin video: leave as is */ }
+  });
+  try {
+    await new Promise(r => setTimeout(r, 30));
+    return await htmlToImage.toBlob(node, { pixelRatio: 2 });
+  } finally {
+    swaps.forEach(([img, v]) => { img.replaceWith(v); v.play().catch(() => {}); });
+  }
+}
+$('#btn-dl').onclick = async () => { // one PNG per selected mock
+  const sel = selectedMocks();
+  try {
+    for (const [i, m] of sel.entries()) {
+      const blob = await captureBlob(m);
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${fileBase(m)}-${Date.now()}${sel.length > 1 ? '-' + (i + 1) : ''}.png`;
+      a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    }
+    toast(sel.length > 1 ? `Downloaded ${sel.length} PNGs` : 'PNG downloaded');
+  } catch (err) { console.error(err); toast(err.message || 'Export failed — remote images may block export (CORS)'); }
+};
+/* ---------------- Copy image ----------------
+   Clipboard writes must start inside the click, so the PNG is rendered ahead of time
+   (when the pointer reaches the button) and reused if the preview hasn't changed since. */
+let prepared = null; // { v, promise, dataURL }
+function prepareCopy() {
+  if (prepared && prepared.v === previewVersion) return prepared.promise;
+  const entry = { v: previewVersion, promise: captureBlob(), dataURL: null };
+  entry.promise.then(b => new Promise(res => { const r = new FileReader(); r.onload = () => res(r.result); r.readAsDataURL(b); }))
+    .then(d => { entry.dataURL = d; }).catch(() => { if (prepared === entry) prepared = null; });
+  prepared = entry;
+  return entry.promise;
+}
+function copyViaSelection(dataURL) { // fallback for browsers without the async Clipboard API
+  const box = document.createElement('div');
+  box.contentEditable = 'true'; box.style.cssText = 'position:fixed;left:-9999px;top:0';
+  const img = new Image(); img.src = dataURL; box.appendChild(img); document.body.appendChild(box);
+  const range = document.createRange(); range.selectNode(img);
+  const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+  let ok = false; try { ok = document.execCommand('copy'); } catch {}
+  sel.removeAllRanges(); box.remove();
+  return ok;
+}
+function showCopyModal(blob) { // last resort: show the PNG so it can be right-click copied or dragged
+  const url = URL.createObjectURL(blob);
+  $('#copy-img').src = url;
+  $('#copy-modal').hidden = false;
+  $('#copy-dl').onclick = () => { const a = document.createElement('a'); a.href = url; a.download = `${fileBase()}-${Date.now()}.png`; a.click(); };
+  $('#copy-close').onclick = () => { $('#copy-modal').hidden = true; URL.revokeObjectURL(url); };
+}
+// The button lives in the editor, which re-renders, so delegate the hover pre-render to its container
+$('#editor').addEventListener('pointerover', e => { if (e.target.closest('[data-action="obj-copy"]')) prepareCopy().catch(() => {}); });
+// Some embedded browsers never settle clipboard writes; treat a stalled write as blocked.
+const withTimeout = (promise, ms) => Promise.race([promise, new Promise((_, rej) => setTimeout(() => rej(new Error('Clipboard write timed out')), ms))]);
+async function copySelectedImage() {
+  const p = prepareCopy();
+  if (navigator.clipboard?.write && window.ClipboardItem) {
+    try { await withTimeout(navigator.clipboard.write([new ClipboardItem({ 'image/png': p })]), 4000); return toast('Image copied to clipboard'); }
+    catch (err) {
+      console.warn('Clipboard API failed', err);
+      // Older engines reject a pending image; retry once with the finished PNG (not worth it if the write stalled)
+      if (!/timed out/.test(err.message)) {
+        try { await withTimeout(navigator.clipboard.write([new ClipboardItem({ 'image/png': await p })]), 3000); return toast('Image copied to clipboard'); }
+        catch (err2) { console.warn('Clipboard API blocked', err2); }
+      }
+    }
+  } else if (prepared?.dataURL && copyViaSelection(prepared.dataURL)) {
+    return toast('Image copied to clipboard');
+  }
+  try { showCopyModal(await p); } catch (err) { console.error(err); toast(err.message || 'Export failed'); }
+}
+$('#btn-save').onclick = () => {
+  // Writes a copy of this editor with all canvases built in — open it anytime to keep editing
+  const json = JSON.stringify(book, (k, v) => k === 'media' && Array.isArray(v) ? v.filter(m => !m.src.startsWith('blob:')) : v)
+    .replace(/</g, '\\u003c');
+  const html = PAGE_SRC.replace(/<script id="preset" type="application\/json">[\s\S]*?<\/script>/,
+    () => `<script id="preset" type="application/json">${json}<\/script>`)
+    .replace(/<script id="imports" type="application\/json">[\s\S]*?<\/script>/, () => '<script id="imports" type="application/json">[]<\/script>'); // already in the saved canvases
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+  a.download = 'mocks.html'; a.click();
+  if (book.canvases.some(c => c.doc.mocks.some(s => s.tweets?.some(t => t.media.some(m => m.src.startsWith('blob:')))))) toast('Saved — uploaded video files aren’t included');
+};
+function openSavedFile() {
+  const inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.json,application/json';
+  inp.onchange = async () => {
+    let p; try { p = JSON.parse(await inp.files[0].text()); } catch {}
+    const loaded = toBook(p);
+    if (!loaded) return toast('Not a valid mock file');
+    if (!p.mocks && !p.canvases) { // a single mock joins the open canvas
+      const m = loaded.canvases[0].doc.mocks[0]; m.id = uid(); Object.assign(m, spotRightOf());
+      addMock(m); return toast('Mock added to the canvas');
+    }
+    if (p.mocks) { // a canvas file: its mocks join the open canvas
+      const added = addMocksToCanvas(loaded.canvases[0].doc.mocks);
+      return toast(`Added ${added.length} mock${added.length === 1 ? '' : 's'} to “${currentCanvas().name}”`);
+    }
+    // a whole saved file (several canvases): added alongside the existing canvases, never replacing them
+    loaded.canvases.forEach(c => { c.id = uid(); freshIds(c.doc); book.canvases.push(c); });
+    switchCanvas(loaded.canvases[0].id); toast(`Added ${loaded.canvases.length} canvas${loaded.canvases.length === 1 ? '' : 'es'}`);
+  };
+  inp.click();
+}
+function resetFile() {
+  askConfirm('Discard all edits (every canvas) and go back to this file’s original mocks?').then(ok => {
+    if (!ok) return;
+    book = initialBook(); switchCanvas(book.canvases[0].id);
+  });
+}
+
+/* ---------------- Share links ----------------
+   A shared canvas is a secret GitHub gist holding canvas.json; the link is SHARE_BASE#gist=owner/id.
+   Anyone with the link can open it (no login), and nobody can find it without the link. Uploading needs
+   a GitHub token with the gist scope, kept in this browser only. Sharing a canvas again updates the same
+   gist, so its link doesn't change. */
+const SHARE_BASE = 'https://morikyl.github.io/social-post-mocker/';
+const TOKEN_KEY = 'tweet-mocker-github-token', SHARED_KEY = STORE + ':shared';
+const TOKEN_URL = 'https://github.com/settings/tokens/new?scopes=gist&description=Social%20post%20mocker';
+const shareLink = share => `${SHARE_BASE}#gist=${share.owner}/${share.id}`;
+function shareJSON(canvas) { // uploaded video files can't be shared (they only exist in this tab)
+  return JSON.stringify({ mockerShare: 1, canvases: [{ name: canvas.name, doc: canvas.doc }] },
+    (k, v) => k === 'media' && Array.isArray(v) ? v.filter(m => !m.src.startsWith('blob:')) : v);
+}
+const githubApi = (path, method, token, body) => fetch(`https://api.github.com/${path}`, {
+  method, body: JSON.stringify(body),
+  headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
+});
+async function copyOrShow(link) {
+  try { await navigator.clipboard.writeText(link); toast('Link copied: anyone with it can open this canvas'); }
+  catch { await askText('Share link: copy it from here', link); }
+}
+async function shareCanvas() {
+  const canvas = currentCanvas();
+  let token = readPref(TOKEN_KEY), newToken = false;
+  if (!token) {
+    window.open(TOKEN_URL, '_blank', 'noopener');
+    token = await askText('Paste a GitHub token with the “gist” scope (a page to create one just opened). It stays in this browser and is only used to upload shared canvases.');
+    if (!token) return;
+    newToken = true;
+  }
+  const body = { description: `Social post mocker · ${canvas.name}`, public: false, files: { 'canvas.json': { content: shareJSON(canvas) } } };
+  $('#btn-share').disabled = true; toast('Uploading…');
+  try {
+    // Update the gist this canvas was shared as before; if that fails (deleted, or someone else's), make a new one
+    let res = canvas.share ? await githubApi(`gists/${canvas.share.id}`, 'PATCH', token, body) : null;
+    if (res?.ok !== true) res = await githubApi('gists', 'POST', token, body);
+    if (res.status === 401) {
+      try { localStorage.removeItem(TOKEN_KEY); } catch {}
+      return toast('GitHub didn’t accept that token. Share again to enter a new one.');
+    }
+    if (!res.ok) return toast(`Couldn’t share: GitHub answered ${res.status}`);
+    const gist = await res.json();
+    if (newToken) try { localStorage.setItem(TOKEN_KEY, token); } catch {}
+    const relink = canvas.share?.id === gist.id;
+    canvas.share = { owner: gist.owner.login, id: gist.id }; save();
+    await copyOrShow(shareLink(canvas.share));
+    if (relink) toast('Link updated: the same link now shows this version');
+    if (canvas.doc.mocks.some(m => m.tweets?.some(t => t.media.some(md => md.src.startsWith('blob:'))))) toast('Shared, but uploaded video files aren’t included');
+  } catch (err) {
+    console.error(err); toast('Couldn’t reach GitHub to share the canvas');
+  } finally { $('#btn-share').disabled = false; }
+}
+$('#btn-share').onclick = shareCanvas;
+
+// Opening a link adds the shared canvas next to your own, never over them. Opening the same version again
+// switches to it; a newer version (the sharer updated it) comes in as another canvas.
+async function openSharedFromHash() {
+  const match = location.hash.match(/gist=([\w-]+)\/([0-9a-f]+)/i); if (!match) return;
+  const [, owner, id] = match;
+  // The API gives the latest revision's own URL (no CDN lag after an update); it's rate-limited, so fall back to raw
+  let raw = `https://gist.githubusercontent.com/${owner}/${id}/raw/canvas.json`, version = 'latest';
+  try {
+    const res = await fetch(`https://api.github.com/gists/${id}`);
+    if (res.ok) { const gist = await res.json(); version = gist.history?.[0]?.version ?? version; raw = gist.files?.['canvas.json']?.raw_url ?? raw; }
+  } catch {}
+  let shared;
+  try { const res = await fetch(raw); if (!res.ok) throw new Error(String(res.status)); shared = toBook(await res.json()); }
+  catch { return toast('Couldn’t open that link: the canvas may have been deleted'); }
+  if (!shared) return toast('That link doesn’t contain a canvas');
+  let opened = {}; try { opened = JSON.parse(localStorage.getItem(SHARED_KEY)) ?? {}; } catch {}
+  const key = `${id}@${version}`, here = (opened[key] ?? []).filter(cid => book.canvases.some(c => c.id === cid));
+  if (here.length) { if (book.current !== here[0]) switchCanvas(here[0]); return; }
+  shared.canvases.forEach(c => { c.id = uid(); delete c.share; freshIds(c.doc); });
+  if (firstVisit && Object.keys(opened).length === 0) book.canvases = shared.canvases; // just the sample canvas so far
+  else book.canvases.push(...shared.canvases);
+  opened[key] = shared.canvases.map(c => c.id);
+  try { localStorage.setItem(SHARED_KEY, JSON.stringify(opened)); } catch {}
+  switchCanvas(shared.canvases[0].id);
+  toast(`Opened “${shared.canvases[0].name}” from a shared link`);
+}
+window.addEventListener('hashchange', openSharedFromHash);
+
+/* ---------------- Sidebar toggle (UI preference, separate from the mock itself) ---------------- */
+// Preferences are a convenience only, and storage can be denied outright (private mode, `file:` URLs),
+// so a preference read must never be able to break the first render.
+function readPref(key) { try { return localStorage.getItem(key); } catch { return null; } }
+const SIDEBAR_KEY = 'tweet-mocker-sidebar-hidden';
+function setSidebar(hidden, remember = true) {
+  document.querySelector('.app').classList.toggle('no-sidebar', hidden);
+  $('#sb-label').textContent = hidden ? 'Show editor' : 'Hide editor';
+  $('#btn-sidebar').title = `${hidden ? 'Show' : 'Hide'} editor (⌘\\ / Ctrl+\\)`;
+  if (remember) try { localStorage.setItem(SIDEBAR_KEY, hidden ? '1' : ''); } catch {}
+}
+$('#btn-sidebar').onclick = () => setSidebar(!document.querySelector('.app').classList.contains('no-sidebar'));
+document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === '\\') { e.preventDefault(); $('#btn-sidebar').click(); }
+});
+// No saved choice yet: start with the editor hidden on narrow screens (phones, small frames)
+const savedSidebar = readPref(SIDEBAR_KEY);
+setSidebar(savedSidebar === null ? innerWidth < 720 : savedSidebar === '1', false);
+
+// Drag the editor's right edge to resize it (remembered; double-click the edge to reset)
+const SIDEBAR_W_KEY = 'tweet-mocker-sidebar-width', SIDEBAR_W_DEFAULT = 420;
+function setSidebarWidth(w) {
+  w = Math.round(Math.max(300, Math.min(w, 760, innerWidth - 320)));
+  document.querySelector('.app').style.setProperty('--sidebar-w', w + 'px');
+  return w;
+}
+let sidebarW = setSidebarWidth(+readPref(SIDEBAR_W_KEY) || SIDEBAR_W_DEFAULT);
+const rememberSidebarW = () => { try { localStorage.setItem(SIDEBAR_W_KEY, String(sidebarW)); } catch {} };
+$('#sb-resizer').addEventListener('pointerdown', e => {
+  if (e.button !== 0) return;
+  e.preventDefault();
+  const handle = e.currentTarget, left = document.querySelector('.app').getBoundingClientRect().left;
+  handle.classList.add('active'); document.body.classList.add('resizing');
+  const move = ev => { sidebarW = setSidebarWidth(ev.clientX - left); };
+  window.addEventListener('pointermove', move);
+  window.addEventListener('pointerup', () => {
+    window.removeEventListener('pointermove', move);
+    handle.classList.remove('active'); document.body.classList.remove('resizing');
+    rememberSidebarW();
+  }, { once: true });
+});
+$('#sb-resizer').addEventListener('dblclick', () => { sidebarW = setSidebarWidth(SIDEBAR_W_DEFAULT); rememberSidebarW(); });
+// On window resize, re-clamp the remembered width (so it comes back once the window is wide again)
+window.addEventListener('resize', () => { sidebarW = setSidebarWidth(+readPref(SIDEBAR_W_KEY) || SIDEBAR_W_DEFAULT); });
+
+renderEditor();
+renderCanvas();
+updateCanvasMenu();
+const imported = applyImports(); // frames the newly added mocks itself
+if (!doc.view && !imported) requestAnimationFrame(() => fitView()); // first open: frame all mocks
+save();
+openSharedFromHash();
+setInterval(() => renderCanvas(), 60000); // keep relative times fresh
+</script>
+</body>
+</html>
